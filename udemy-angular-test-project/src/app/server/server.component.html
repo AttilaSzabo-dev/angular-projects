@@ -1,1 +1,6 @@
-<h6>Server Component test</h6>
+<!-- attribute directives ngStyle and ngClass -->
+<p 
+    [ngStyle]="{backgroundColor: getColor()}"
+    [ngClass]="{online: serverStatus === 'online'}">
+    {{ "server" }} with ID {{ serverId }} is {{ getServerStatus() }}
+</p>
