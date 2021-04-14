@@ -1,6 +1,58 @@
 .container-fluid {
     height: 100vh;
-    width: 99vw;
-    margin: 0 auto;
-    border: 1px solid green;
+    width: 100vw;
+
+    .side-area {
+        height: 100vh;
+        width: 100%;
+        border: 1px solid blue;
+    }
+
+    .middle-area {
+        height: 50vh;
+        width: 100%;
+        border: 1px solid red;
+
+        .cards-holder {
+            height: 5.5rem;
+            border: 1px solid green;
+        }
+
+        .hero-holder {
+            height: 6rem;
+            border: 1px solid dodgerblue;
+        }
+
+        .arena-holder {
+            height: 11.3rem;
+            border: 1px solid orange;
+        }
+
+        &--top {
+            .cards-holder--enemy {
+                top: 0;
+            }
+
+            .hero-holder--enemy {
+                top: 5.5rem;
+            }
+
+            .arena-holder--enemy {
+                bottom: 0;
+            }
+        }
+        &--bottom {
+            .cards-holder--player {
+                bottom: 0;
+            }
+
+            .hero-holder--player {
+                bottom: 5.5rem;
+            }
+
+            .arena-holder--player {
+                top: 0;
+            }
+        }
+    }
 }

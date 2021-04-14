@@ -1,34 +1,71 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="col-1">
+        <div class="col-1 px-0 side-area"> <!-- history -->
             <app-history></app-history>
         </div>
         <div class="col-10">
             <div class="row">
-                <div class="col-10" style="border:1px solid red">
-                    <app-cards-hand></app-cards-hand>
+                <div class="col-12 position-relative middle-area middle-area--top">
+                    <div class="row">
+                        <div class="col-12 position-absolute cards-holder cards-holder--enemy"> <!-- enemy cards, mana -->
+                            <div class="row">
+                                <div class="col-10 px-0"> <!-- enemy cards -->
+                                    <app-cards-hand></app-cards-hand>
+                                </div>
+                                <div class="col-2"> <!-- enemy mana -->
+                                    <app-mana></app-mana>
+                                </div> 
+                            </div>
+                        </div> 
+                        <div class="col-12 position-absolute hero-holder hero-holder--enemy"> <!-- enemy hero, hero power -->
+                            <div class="row">
+                                <div class="col-2"></div>
+                                <div class="col-7"> <!-- enemy hero -->
+                                    <app-hero></app-hero>
+                                </div> 
+                                <div class="col-3"> <!-- enemy hero power -->
+                                    <app-hero-power></app-hero-power>
+                                </div> 
+                            </div>
+                        </div> 
+                        <div class="col-12 position-absolute arena-holder arena-holder--enemy"> <!-- enemy arena -->
+                            <app-arena></app-arena>
+                        </div> 
+                    </div>
                 </div>
-                <div class="col-2" style="border:1px solid red"></div> <!-- enemy mana -->
-            </div>
-            <div class="row">
-                <div class="col-12"></div> <!-- hero slot and hero power -->
-            </div>
-            <div class="row">
-                <div class="col-12"></div> <!-- arena enemy -->
-                <hr>
-                <div class="col-12"></div> <!-- arena player -->
-            </div>
-            <div class="row">
-                <div class="col-12"></div> <!-- hero slot and hero power -->
-            </div>
-            <div class="row">
-                <div class="col-10">
-                    <app-cards-hand></app-cards-hand>
+                <div class="col-12 position-relative middle-area middle-area--bottom">
+                    <div class="row">
+                        <div class="col-12 position-absolute arena-holder arena-holder--player"> <!-- player arena -->
+                            <app-arena></app-arena>
+                        </div> 
+                        <div class="col-12 position-absolute hero-holder hero-holder--player"> <!-- player hero, hero power -->
+                            <div class="row">
+                                <div class="col-2"></div>
+                                <div class="col-7"> <!-- player hero -->
+                                    <app-hero></app-hero>
+                                </div> 
+                                <div class="col-3"> <!-- player hero power -->
+                                    <app-hero-power></app-hero-power>
+                                </div> 
+                            </div>
+                        </div> 
+                        <div class="col-12 position-absolute cards-holder cards-holder--player"> <!-- player cards, mana -->
+                            <div class="row">
+                                <div class="col-10 px-0"> <!-- player cards -->
+                                    <app-cards-hand></app-cards-hand>
+                                </div>
+                                <div class="col-2"> <!-- player mana -->
+                                    <app-mana></app-mana>
+                                </div> 
+                            </div>
+                        </div> 
+                    </div>
                 </div>
-                <div class="col-2"></div> <!-- player mana -->
             </div>
         </div>
-        <div class="col-1"></div> <!-- decks and end turn -->
+        <div class="col-1 px-0 side-area"> <!-- decks and end turn -->
+            <app-history></app-history>
+        </div> 
     </div>
 </div>
 
