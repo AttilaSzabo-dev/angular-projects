@@ -1,0 +1,117 @@
+$border-black: black;
+$text-background: #A89785;
+$text-color-bubbles: white;
+$text-weight-bubbles: bold;
+
+$font-size-bubbles: .65rem;
+$font-size-text: .5rem;
+
+.card-item {
+    position: relative;
+    width: 6rem;
+    height: 8rem;
+    background-color: #a35709;
+    z-index: 100;
+    border: 1px solid $border-black;
+    border-radius: .2rem;
+
+    margin-top: 1rem;
+
+    &--manaCost {
+        position: absolute;
+        top: -.3rem;
+        left: -.3rem;
+        width: 1rem;
+        height: 1rem;
+        background: #0061a8;
+        border-radius: .3rem;
+        border: 1px solid $border-black;
+        font-size: $font-size-bubbles;
+        color: $text-color-bubbles;
+        font-weight: $text-weight-bubbles;
+    }
+
+    &--pic {
+        position: absolute;
+        top: -.3rem;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        width: 3.5rem;
+        height: 5rem;
+        border-radius: 70%;
+        background-color: $border-black;
+        border: 3px solid #777169;
+
+        img {
+            width: 100%;
+            height: 100%;
+            border-radius: 70%;
+            vertical-align:middle;
+        }
+    }
+
+    &--name {
+        position: absolute;
+        bottom: 3rem;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        width: 5rem;
+        height: .7rem;
+        background-color: $text-background;
+        border: 1px solid $border-black;
+        border-radius: .2rem;
+        font-size: $font-size-text;
+    }
+
+    &--description {
+        position: absolute;
+        bottom: .5rem;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        width: 5rem;
+        height: 2rem;
+        background-color: $text-background;
+        border: 1px solid $border-black;
+        border-radius: .1rem;
+        font-size: $font-size-text;
+    }
+
+    &--attack {
+        position: absolute;
+        bottom: -.3rem;
+        left: -.3rem;
+        width: 1rem;
+        height: 1rem;
+        border-radius: 50%;
+        background-color: #E2BA29;
+        border: 1px solid $border-black;
+        font-size: $font-size-bubbles;
+        color: $text-color-bubbles;
+        font-weight: $text-weight-bubbles;
+    }
+
+    &--health {
+        position: absolute;
+        bottom: -.3rem;
+        right: -.3rem;
+        width: 1rem;
+        height: 1rem;
+        border-radius: 0 50% 50% 50%;
+        transform: rotate(45deg);
+        background-color: #C82D26;
+        border: 1px solid $border-black;
+        font-size: $font-size-bubbles;
+        color: $text-color-bubbles;
+        font-weight: $text-weight-bubbles;
+
+        .rotate-correction {
+            width: inherit;
+            height: inherit;
+            transform: rotate(-45deg);
+            padding-bottom: .22rem;
+        }
+    }
+}
