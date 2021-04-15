@@ -1,12 +1,12 @@
-<div class="card-item">
-    <div class="d-flex align-items-center justify-content-center card-item--manaCost">2</div>
+<div class="card-item mx-1">
+    <div class="d-flex align-items-center justify-content-center card-item--manaCost">{{ cardInfo.mana }}</div>
     <div class="card-item--pic">
-        <img src="../../../assets/img/creature.png" alt="error">
+        <img [src]="cardInfo.imagePath" alt="error">
     </div>
-    <div class="d-flex align-items-center justify-content-center card-item--name">Battlefiend</div>
-    <div class="d-flex align-items-center justify-content-center card-item--description">Outcast: Draw a card</div>
-    <div class="d-flex align-items-center justify-content-center card-item--attack">2</div>
+    <div class="d-flex align-items-center justify-content-center card-item--name">{{ cardInfo.name }}</div>
+    <div class="d-flex align-items-center justify-content-center card-item--description">{{ cardInfo.description }}</div>
+    <div class="d-flex align-items-center justify-content-center card-item--attack">{{ cardInfo.attack }}</div>
     <div class="card-item--health">
-        <div class="d-flex align-items-center justify-content-center rotate-correction">2</div>
+        <div class="d-flex align-items-center justify-content-center rotate-correction">{{ cardInfo.health }}</div>
     </div>
 </div>

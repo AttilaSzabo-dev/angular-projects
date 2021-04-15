@@ -1,3 +1,6 @@
-<div class="cards-container">
-    <app-card-item></app-card-item>
+<div class="d-flex cards-container">
+    <app-card-item
+        *ngFor="let card of cards"
+        [cardInfo]="card">
+    </app-card-item>
 </div>

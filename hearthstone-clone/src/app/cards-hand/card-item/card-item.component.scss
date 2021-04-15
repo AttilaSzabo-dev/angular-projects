@@ -14,8 +14,13 @@ $font-size-text: .5rem;
     z-index: 100;
     border: 1px solid $border-black;
     border-radius: .2rem;
-
+    transform: scale(.7);
     margin-top: 1rem;
+    transition: all .2s;
+
+    &:hover {
+        transform: scale(1);
+    }
 
     &--manaCost {
         position: absolute;
