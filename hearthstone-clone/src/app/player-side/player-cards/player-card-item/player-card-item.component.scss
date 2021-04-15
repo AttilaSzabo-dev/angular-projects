@@ -8,18 +8,19 @@ $font-size-text: .5rem;
 
 .card-item {
     position: relative;
-    width: 6rem;
-    height: 8rem;
+    width: 4.5rem;
+    height: 6rem;
     background-color: #a35709;
     z-index: 100;
-    border: 1px solid $border-black;
+    /* border: 1px solid $border-black; */
     border-radius: .2rem;
-    transform: scale(.7);
-    margin-top: 1rem;
     transition: all .2s;
+    backface-visibility: hidden;
+    z-index: 200;
 
     &:hover {
-        transform: scale(1);
+        transform: scale(1.7) translateY(-1.5rem);
+        z-index: 300;
     }
 
     &--manaCost {
@@ -42,8 +43,8 @@ $font-size-text: .5rem;
         left: 0;
         right: 0;
         margin: 0 auto;
-        width: 3.5rem;
-        height: 5rem;
+        width: 3rem;
+        height: 3.5rem;
         border-radius: 70%;
         background-color: $border-black;
         border: 3px solid #777169;
@@ -52,7 +53,6 @@ $font-size-text: .5rem;
             width: 100%;
             height: 100%;
             border-radius: 70%;
-            vertical-align:middle;
         }
     }
 
@@ -62,7 +62,7 @@ $font-size-text: .5rem;
         left: 0;
         right: 0;
         margin: 0 auto;
-        width: 5rem;
+        width: 4rem;
         height: .7rem;
         background-color: $text-background;
         border: 1px solid $border-black;
@@ -76,7 +76,7 @@ $font-size-text: .5rem;
         left: 0;
         right: 0;
         margin: 0 auto;
-        width: 5rem;
+        width: 4rem;
         height: 2rem;
         background-color: $text-background;
         border: 1px solid $border-black;
