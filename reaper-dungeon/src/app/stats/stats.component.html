@@ -1,0 +1,53 @@
+<div class="container-fluid p-0">
+    <div class="d-flex flex-column">
+        <div class="row no-gutters">
+            <div class="col-6 pic pic--health pic-border--big"></div>
+            <div class="col-6">health stats</div>
+        </div>
+        <div class="row no-gutters">
+            <div class="col-6 pic pic--attack pic-border--big"></div>
+            <div class="col-6">attack stats</div>
+        </div>
+        <div class="row no-gutters">
+            <div class="col-6 pic pic--defense pic-border--big"></div>
+            <div class="col-6">defense stats</div>
+        </div>
+        <div class="row no-gutters">
+            <div class="col-2 pic pic--mana pic-border--small"></div>
+            <div class="col-10 d-inline-flex flex-row align-items-center">
+                <div
+                    *ngFor="let number of numbers"
+                    class="mana-{{ number }} bubbles bubbles--mana">
+                </div>   
+            </div>
+        </div>
+        <div class="row no-gutters">
+            <div class="col-2 pic pic--stamina pic-border--small"></div>
+            <div class="col-10 d-inline-flex flex-row align-items-center">
+                <div
+                    *ngFor="let number of numbers"
+                    class="stamina-{{ number }} bubbles bubbles--stamina">
+                </div> 
+            </div> 
+        </div>
+        <div class="row no-gutters">
+            <div class="col-6">
+                <div class="row no-gutters">
+                    <div class="col-4 pic pic--gold pic-border--small"></div>
+                    <div class="col-8">col-8</div>
+                    <div class="col-6 pic pic--hand pic-border--small"></div>
+                    <div class="col-6 pic pic--leg pic-border--small"></div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="row no-gutters">
+                    <div class="col-6 pic pic--sword pic-border--small"></div>
+                    <div class="col-6 pic pic--armor pic-border--small"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row no-gutters">
+            active effects
+        </div>
+    </div>
+</div>

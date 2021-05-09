@@ -1,0 +1,142 @@
+@import "../../assets/variables/variables";
+
+.container-fluid {
+    height: 100%;
+
+    .flex-column {
+        height: 100%;
+
+        .row {
+            .pic {
+                width: 100%;
+                height: 100%;
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center center;
+                background-color: $default-black;
+
+                &--health {
+                    background-image: url(../../assets/images/heart.png);
+                }
+
+                &--attack {
+                    background-image: url(../../assets/images/sword.png);
+                }
+
+                &--defense {
+                    background-image: url(../../assets/images/shield.png);
+                }
+
+                &--mana {
+                    background-image: url(../../assets/images/mana.png);
+                }
+
+                &--stamina {
+                    background-image: url(../../assets/images/stamina.png);
+                }
+
+                &--gold {
+                    background-image: url(../../assets/images/coin.png);
+                }
+
+                &--hand {
+                    background-image: url(../../assets/images/hand_basic.png);
+                }
+
+                &--leg {
+                    background-image: url(../../assets/images/leg_basic.png);
+                }
+
+                &--sword {
+                    background-image: url(../../assets/images/sword_basic.png);
+                }
+
+                &--armor {
+                    background-image: url(../../assets/images/armor_basic.png);
+                }
+
+                &.pic-border {
+                    &--big {
+                        border-right: 0.8vh ridge $border-color;
+                        border-bottom: 0.5vh ridge $border-color;
+                    }
+                    &--small {
+                        border-right: 0.5vh ridge $border-color;
+                        border-bottom: 0.5vh ridge $border-color;
+                    }
+                }
+            }
+
+            &:nth-child(1) { // health
+                height: 18%;
+            }
+
+            &:nth-child(2) { // attack
+                height: 18%;
+            }
+
+            &:nth-child(3) { // defense
+                height: 18%;
+            }
+
+            &:nth-child(4),
+            &:nth-child(5){ // stamina/mana
+                height: 6%;
+
+                .bubbles {
+                    height: 70%;
+                    width: 10%;
+                    border-radius: 20%;
+                    margin-left: 0.5vh;
+                    margin-right: 0.5vh;
+
+                    &--mana {
+                        border: 0.1vh solid $bubbles-mana;
+                        background-color: $bubbles-mana;
+                    }
+
+                    &--stamina {
+                        border: 0.1vh solid $bubbles-stamina;
+                        background-color: $bubbles-stamina;
+                    }
+                }
+
+                >:nth-child(2) {
+                    background-color: $default-black;
+                    opacity: .8;
+                    border-bottom: 0.5vh ridge $border-color;
+                }
+
+                >:nth-child(4) {
+                    background-color: $default-black;
+                    opacity: .8;
+                    border-bottom: 0.5vh ridge $border-color;
+                }
+            }
+
+            &:nth-child(6) {
+                height: 13%;
+
+                .row {
+                    /* border: 1px solid red; */
+                    height: 100%;
+
+                    /* &:first-child {
+                        height: 45%;
+                        border: 1px solid green;
+                    }
+
+                    &:last-child {
+                        height: 45%;
+                        border: 1px solid green;
+                    } */
+                    
+                }
+            }
+
+            /* &:nth-child(6) {
+                height: 10%;
+            }  */
+        }
+    }
+}
