@@ -1,0 +1,44 @@
+@import "../../assets/variables/variables";
+
+.container {
+    height: 90%;
+    padding: 0;
+    transform: translateY(5%);
+
+    .flexContainer {
+        height: 100%;
+
+        div {
+            border-top: 0.8vh groove $border-color;
+            border-left: 0.8vh ridge $border-color;
+            border-right: 0.8vh ridge $border-color;
+            border-bottom: 0.8vh groove $border-color;
+            background-color: $default-black;
+            opacity: 0.8;
+            padding: 1rem;
+        }
+
+        :first-child {
+            height: 45%;
+            font-size: 5vh;
+        }
+
+        :not(:first-child) {
+            height: 15%;
+            font-size: 2.5vh;
+
+            &:hover {
+                color: $hover-color;
+                border-top: 0.8vh groove $hover-color;
+                border-left: 0.8vh ridge $hover-color;
+                border-right: 0.8vh ridge $hover-color;
+                border-bottom: 0.8vh groove $hover-color;
+                box-shadow: 0px 0px 66px 34px rgb(242 104 63 / 61%);
+                -webkit-box-shadow: 0px 0px 66px 34px rgb(242 104 63 / 61%);
+                -moz-box-shadow: 0px 0px 66px 34px rgba(242,104,63,0.61);
+                opacity: 1;
+                cursor: pointer;
+            }
+        }
+    }
+}
