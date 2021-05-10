@@ -67,6 +67,54 @@
                 }
             }
 
+            .text {
+
+                &--gold {
+                    background-color: $default-black;
+                    font-size: $font-size-3;
+                }
+
+                &.text-border {
+                    &--small {
+                        border-right: 0.5vh ridge $border-color;
+                        border-bottom: 0.5vh ridge $border-color;
+                    }
+
+                    &--small_bottom {
+                        border-bottom: 0.5vh ridge $border-color;
+                    }
+                }
+
+                .textInner {
+                    width: 30%;
+                    height: 45%;
+                    background-color: $default-black;
+                    opacity: $stats-opacity;
+                    font-size: $font-size-3;
+
+                    /* &.textInner {
+                        &--healthAmount {
+
+                        }
+                         &--attackAmount {
+
+                        }
+                         &--defenseAmount {
+
+                        }
+                    } */
+
+                    &.textInner-border {
+                        &--big {
+                            border-top: 0.8vh groove $border-color;
+                            border-left: 0.8vh ridge $border-color;
+                            border-right: 0.8vh ridge $border-color;
+                            border-bottom: 0.8vh groove $border-color;
+                        }
+                    }
+                }
+            }
+
             &:nth-child(1) { // health
                 height: 18%;
             }
@@ -80,8 +128,9 @@
             }
 
             &:nth-child(4),
-            &:nth-child(5){ // stamina/mana
+            &:nth-child(5) { // stamina/mana
                 height: 6%;
+                opacity: $stats-opacity;
 
                 .bubbles {
                     height: 70%;
@@ -103,40 +152,28 @@
 
                 >:nth-child(2) {
                     background-color: $default-black;
-                    opacity: .8;
-                    border-bottom: 0.5vh ridge $border-color;
-                }
-
-                >:nth-child(4) {
-                    background-color: $default-black;
-                    opacity: .8;
                     border-bottom: 0.5vh ridge $border-color;
                 }
             }
 
-            &:nth-child(6) {
-                height: 13%;
+            &:nth-child(6) { // gear
+                height: 22%;
+                opacity: $stats-opacity;
 
                 .row {
-                    /* border: 1px solid red; */
                     height: 100%;
 
-                    /* &:first-child {
-                        height: 45%;
-                        border: 1px solid green;
-                    }
-
-                    &:last-child {
-                        height: 45%;
-                        border: 1px solid green;
-                    } */
-                    
+                    &.heightAdjustment {
+                        height: 35%;
+                    } 
                 }
             }
 
-            /* &:nth-child(6) {
-                height: 10%;
-            }  */
+            &:nth-child(7) { // active effects
+                height: 12%;
+                background-color: $default-black;
+                opacity: $stats-opacity;
+            } 
         }
     }
 }
