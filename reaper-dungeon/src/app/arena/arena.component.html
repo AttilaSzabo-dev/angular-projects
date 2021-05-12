@@ -1,0 +1,59 @@
+<div class="container-fluid p-0">
+    <div class="row no-gutters">
+        <div class="col-3 d-flex flex-column set-height">
+            <div></div>
+            <div class="d-flex flex-column">
+                <div class="d-flex flex-column align-items-center">
+                    <div class="d-flex align-items-center justify-content-center name name-display name-border--big">{{ minAttackName }}</div>
+                    <div class="d-flex align-items-center justify-content-center value value-display value-border--small">{{ minAttackValue }}</div>
+                </div>
+                <div class="d-flex flex-column align-items-center">
+                    <div class="d-flex align-items-center justify-content-center name name-display name-border--big">{{ maxAttackName }}</div>
+                    <div class="d-flex align-items-center justify-content-center value value-display value-border--small">{{ maxAttackValue }}</div>
+                </div>
+                <div class="d-flex flex-column align-items-center">
+                    <div class="d-flex align-items-center justify-content-center name name-display name-border--big">{{ actualAttackName }}</div>
+                    <div class="d-flex align-items-center justify-content-center value value-display value-border--small">{{ actualAttackValue }}</div>
+                </div>
+            </div>
+            <div class="d-flex flex-column align-items-center">
+                <div class="d-flex align-items-center justify-content-center control control-attack control-border--big">{{ attackType }}</div>
+                <div class="d-flex align-items-center justify-content-center control control-attack control-border--big">{{ attackType }}</div>
+            </div>
+        </div>
+        <div class="col-6 d-flex flex-column set-height">
+            <div class="d-flex align-items-center justify-content-center">
+                <div class="d-flex align-items-center justify-content-center name name-enemy name-border--big">{{ enemyName }}</div>
+            </div>
+            <div class="d-flex align-items-center justify-content-center">
+                <div class="d-flex align-items-center justify-content-center enemy-pic">
+                    <img 
+                        class="img-fluid"
+                        [src]="enemyPicPath" 
+                        alt="{{ enemyName }}">
+                </div>
+            </div>
+            <div></div>
+        </div>
+        <div class="col-3 d-flex flex-column set-height">
+            <div></div>
+            <div class="d-flex flex-column">
+                <div class="d-flex flex-column">
+                    <div class="d-flex flex-column align-items-center justify-content-center">
+                        <div class="d-flex align-items-center justify-content-center name name-display name-border--big">{{ enemyHealth }}</div>
+                        <div class="d-flex align-items-center justify-content-center value value-display value-border--small">{{ enemyHealthValue }}</div>
+                    </div>
+                    <div class="d-flex flex-column align-items-center justify-content-center">
+                        <div class="d-flex align-items-center justify-content-center name name-display name-border--big">{{ enemyInitiative }}</div>
+                        <div class="d-flex align-items-center justify-content-center value value-display value-border--small">{{ enemyInitiativeValue }}</div>
+                    </div>
+                    <div class="d-flex flex-column align-items-center justify-content-center">
+                        <div class="d-flex align-items-center justify-content-center name name-display name-border--big">{{ enemyModifier }}</div>
+                        <div class="d-flex align-items-center justify-content-center value value-display value-border--small">{{ enemyModifierType }}</div>
+                    </div>
+                </div>
+            </div>
+            <div></div>
+        </div>
+    </div>
+</div>

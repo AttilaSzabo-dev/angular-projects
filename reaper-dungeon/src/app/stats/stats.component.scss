@@ -28,31 +28,31 @@
                 }
 
                 &--mana {
-                    background-image: url(../../assets/images/mana.png);
+                    background-image: url(../../assets/images/misc/mana.png);
                 }
 
                 &--stamina {
-                    background-image: url(../../assets/images/stamina.png);
+                    background-image: url(../../assets/images/misc/stamina.png);
                 }
 
                 &--gold {
-                    background-image: url(../../assets/images/coin.png);
+                    background-image: url(../../assets/images/misc/coin.png);
                 }
 
                 &--hand {
-                    background-image: url(../../assets/images/hand_basic.png);
+                    background-image: url(../../assets/images/gear/hand_basic.png);
                 }
 
                 &--leg {
-                    background-image: url(../../assets/images/leg_basic.png);
+                    background-image: url(../../assets/images/gear/leg_basic.png);
                 }
 
                 &--sword {
-                    background-image: url(../../assets/images/sword_basic.png);
+                    background-image: url(../../assets/images/gear/sword_basic.png);
                 }
 
                 &--armor {
-                    background-image: url(../../assets/images/armor_basic.png);
+                    background-image: url(../../assets/images/gear/armor_basic.png);
                 }
 
                 &.pic-border {
@@ -106,10 +106,7 @@
 
                     &.textInner-border {
                         &--big {
-                            border-top: 0.8vh groove $border-color;
-                            border-left: 0.8vh ridge $border-color;
-                            border-right: 0.8vh ridge $border-color;
-                            border-bottom: 0.8vh groove $border-color;
+                            @include border-big;
                         }
                     }
                 }
