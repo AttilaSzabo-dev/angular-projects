@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'reaper-dungeon';
+  title = 'reaper-dungeon-v2';
   arenaMode = true;
 }

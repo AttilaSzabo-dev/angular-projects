@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-arena',
@@ -6,7 +6,6 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
   styleUrls: ['./arena.component.scss']
 })
 export class ArenaComponent implements OnInit {
-  @ViewChild('carousel', {static: true}) firstChild: ElementRef;
 
   enemyName = "Helltooth";
   minAttackName = "Minimum Attack:";
@@ -32,9 +31,6 @@ export class ArenaComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.firstChild.nativeElement.carousel({
-      interval: 2000
-    });
     
   }
 
