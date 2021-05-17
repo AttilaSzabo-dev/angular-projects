@@ -1,0 +1,46 @@
+@font-face {
+    font-family: "fantasy";
+    src: url(../font/fantasy.ttf);
+}
+
+@mixin border-big {
+    border-top: 0.8vh groove $border-color;
+    border-left: 0.8vh ridge $border-color;
+    border-right: 0.8vh ridge $border-color;
+    border-bottom: 0.8vh groove $border-color;
+}
+
+@mixin border-big-hover {
+    border-top: 0.8vh groove $hover-color;
+    border-left: 0.8vh ridge $hover-color;
+    border-right: 0.8vh ridge $hover-color;
+    border-bottom: 0.8vh groove $hover-color;
+}
+
+@mixin border-small {
+    border-top: 0.5vh groove $border-color;
+    border-left: 0.5vh ridge $border-color;
+    border-right: 0.5vh ridge $border-color;
+    border-bottom: 0.5vh groove $border-color;
+}
+
+
+
+// colors
+$default-black: #000;
+$border-color: #664d39;
+$hover-color: #f58e49;
+$text-shadow: 1px 0px 10px red;
+$bubbles-mana: #3399FF;
+$bubbles-stamina: #ffc51a;
+
+// other
+$stats-opacity: .9;
+$dialogue-opacity: .8;
+
+$font-size-1: 1vh;
+$font-size-2: 2vh;
+$font-size-3: 3vh;
+$font-size-4: 4vh;
+$font-size-5: 5vh;
+$font-size-6: 6vh;
