@@ -1,11 +1,13 @@
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders, HttpParams, HttpEventType } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { map } from "rxjs/operators";
+import { Subject, throwError } from "rxjs";
+import { map, catchError, tap } from "rxjs/operators";
 
 import { Post } from "./post.model";
 
 @Injectable({providedIn: "root"})
 export class PostsService {
+    error = new Subject<string>();
 
     constructor(private http: HttpClient) {}
 
@@ -13,16 +15,32 @@ export class PostsService {
         const postData: Post = {title: title, content: content};
         this.http
       .post<{ name: string }>(
-        "https://angular-6da7e-default-rtdb.firebaseio.com/posts.json", postData)
+        "https://angular-6da7e-default-rtdb.firebaseio.com/posts.json", 
+        postData,
+        {
+            observe: "response"
+        }
+      )
       .subscribe(
         responseData => {
           console.log(responseData);
+        }, error => {
+            this.error.next(error.message);
         });
     }
 
     fetchPosts() {
+        let searchParams = new HttpParams();
+        searchParams = searchParams.append("print", "pretty");
+        searchParams = searchParams.append("custom", "key");
         return this.http
-        .get<{ [key: string]: Post }>("https://angular-6da7e-default-rtdb.firebaseio.com/posts.json")
+        .get<{ [key: string]: Post }>("https://angular-6da7e-default-rtdb.firebaseio.com/posts.json", 
+            {
+                headers: new HttpHeaders({"Custom-Header": "Hello"}),
+                params: searchParams,
+                responseType: "json"
+            }
+        )
         .pipe(
             map(responseData => {
                 const postsArray: Post[] = [];
@@ -32,10 +50,29 @@ export class PostsService {
                 }
             }
             return postsArray;
-        }))
+        }),
+        catchError(errorRes => {
+            // Send to analytics server
+            return throwError(errorRes);
+        })
+        );
     }
 
     deletePosts() {
-        return this.http.delete("https://angular-6da7e-default-rtdb.firebaseio.com/posts.json");
+        return this.http.delete("https://angular-6da7e-default-rtdb.firebaseio.com/posts.json", 
+            {
+                observe: "events",
+                responseType: "text"
+            }
+        ).pipe(tap(event => {
+            console.log(event);
+            if (event.type === HttpEventType.Sent ) {
+                // ...
+            }
+
+            if (event.type === HttpEventType.Response ) {
+                console.log(event.body);
+            }
+        }));
     }
 }
