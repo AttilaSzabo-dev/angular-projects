@@ -9,7 +9,7 @@ import { ShoppingListService } from "../shopping-list/shopping-list.service";
 export class RecipeService {
     recipesChanged = new Subject<Recipe[]>();
 
-    private recipes: Recipe[] = [
+    /* private recipes: Recipe[] = [
         new Recipe("Tasty Scnitzel",
                 "A super-tasty Snitzel - just awesome!",
                 "https://www.thespruceeats.com/thmb/cckc3_4QUQ79kSFhcLPM8xg9F3g=/3797x2848/smart/filters:no_upscale()/wiener-schnitzel-recipe-1447089-Hero-5b587d6c46e0fb0071b0059d.jpg",
@@ -24,9 +24,15 @@ export class RecipeService {
                     new Ingredient("Buns", 2),
                     new Ingredient("Meat", 1),
                 ])
-    ];
+    ]; */
+    private recipes: Recipe[] = [];
 
     constructor(private slService: ShoppingListService) {}
+
+    setRecipes(recipes: Recipe[]) {
+        this.recipes = recipes;
+        this.recipesChanged.next(this.recipes.slice());
+    }
 
     getRecipes() {
         return this.recipes.slice();
