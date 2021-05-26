@@ -15,18 +15,6 @@
                 background-position: center center;
                 background-color: $default-black;
 
-                &--health {
-                    background-image: url(../../assets/images/heart.png);
-                }
-
-                &--attack {
-                    background-image: url(../../assets/images/sword.png);
-                }
-
-                &--defense {
-                    background-image: url(../../assets/images/shield.png);
-                }
-
                 &--mana {
                     background-image: url(../../assets/images/misc/mana.png);
                 }
@@ -92,18 +80,6 @@
                     opacity: $stats-opacity;
                     font-size: $font-size-3;
 
-                    /* &.textInner {
-                        &--healthAmount {
-
-                        }
-                         &--attackAmount {
-
-                        }
-                         &--defenseAmount {
-
-                        }
-                    } */
-
                     &.textInner-border {
                         &--big {
                             @include border-big;
@@ -114,14 +90,23 @@
 
             &:nth-child(1) { // health
                 height: 18%;
+                div {
+                    height: 100%;
+                }
             }
 
             &:nth-child(2) { // attack
                 height: 18%;
+                div {
+                    height: 100%;
+                }
             }
 
             &:nth-child(3) { // defense
                 height: 18%;
+                div {
+                    height: 100%;
+                }
             }
 
             &:nth-child(4),

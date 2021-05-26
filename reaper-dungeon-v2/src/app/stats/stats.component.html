@@ -1,22 +1,23 @@
 <div class="container-fluid p-0">
     <div class="d-flex flex-column">
         <div class="row no-gutters">
-            <div class="col-5 pic pic--health pic-border--big"></div>
-            <div class="col-7 d-flex align-items-center justify-content-center text text--health text-border--small_bottom">
-                <div class="d-flex align-items-center justify-content-center textInner textInner--healthAmount textInner-border--big">{{ healthAmount }}</div>
+            <div class="col-12">
+                <app-health></app-health>
             </div>
         </div>
         <div class="row no-gutters">
-            <div class="col-5 pic pic--attack pic-border--big"></div>
-            <div class="col-7 d-flex align-items-center justify-content-center text text--attack text-border--small_bottom">
-                <div class="d-flex align-items-center justify-content-center textInner textInner--attackAmount textInner-border--big">{{ attackAmount }}</div>
+            <div class="col-12">
+                <app-attack></app-attack>
             </div>
         </div>
         <div class="row no-gutters">
-            <div class="col-5 pic pic--defense pic-border--big"></div>
+            <div class="col-12">
+                <app-defense></app-defense>
+            </div>
+            <!-- <div class="col-5 pic pic--defense pic-border--big"></div>
             <div class="col-7 d-flex align-items-center justify-content-center text text--defense text-border--small_bottom">
                 <div class="d-flex align-items-center justify-content-center textInner textInner--defenseAmount textInner-border--big">{{ defenseAmount }}</div>
-            </div>
+            </div> -->
         </div>
         <div class="row no-gutters">
             <div class="col-2 pic pic--mana pic-border--small"></div>

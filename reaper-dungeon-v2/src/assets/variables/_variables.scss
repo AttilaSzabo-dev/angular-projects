@@ -24,6 +24,25 @@
     border-bottom: 0.5vh groove $border-color;
 }
 
+@mixin border-extra-small {
+    border-top: 0.3vh groove $border-color;
+    border-left: 0.3vh ridge $border-color;
+    border-right: 0.3vh ridge $border-color;
+    border-bottom: 0.3vh groove $border-color;
+}
+
+@mixin border-small-bottom {
+    border-bottom: 0.5vh ridge $border-color;
+}
+@mixin border-extra-small-bottom {
+    border-bottom: 0.2vh ridge $border-color;
+}
+
+@mixin border-small-left-right {
+    border-left: 0.5vh ridge $border-color;
+    border-right: 0.5vh ridge $border-color;
+}
+
 
 
 // colors
@@ -35,7 +54,7 @@ $bubbles-mana: #3399FF;
 $bubbles-stamina: #ffc51a;
 
 // other
-$stats-opacity: .9;
+$stats-opacity: .8;
 $dialogue-opacity: .8;
 
 $font-size-1: 1vh;
