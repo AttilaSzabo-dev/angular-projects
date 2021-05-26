@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { DialogueService } from './dialogue.service';
+import { DialogueService } from '../shared/dialogue.service';
 
 @Component({
   selector: 'app-dialogue',
@@ -27,7 +27,7 @@ export class DialogueComponent implements OnInit {
   onDialogueChoice(idIndex: number) {
     this.searchMore = true;
 
-    this.dialogueService.book.forEach((elem: { id: number; ref: number[]; })=> {
+    this.dialogueService.book.forEach((elem)=> {
       if (elem.id === this.whereAreWe && this.searchMore) {
         this.searchMore = false;
         this.whereAreWe = elem.ref[idIndex];

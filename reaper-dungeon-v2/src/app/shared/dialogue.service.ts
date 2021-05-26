@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class DialogueService {
 
-  public book: any = [
+  public book = [
     {
       "id": 0,
       "question": "Reaper Dungeon V1.4 By: SZABÓ ATTILA",

@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'reaper-dungeon-v2';
-  arenaMode = true;
+  arenaMode = false;
 }
