@@ -15,18 +15,6 @@
                 background-position: center center;
                 background-color: $default-black;
 
-                &--mana {
-                    background-image: url(../../assets/images/misc/mana.png);
-                }
-
-                &--stamina {
-                    background-image: url(../../assets/images/misc/stamina.png);
-                }
-
-                &--gold {
-                    background-image: url(../../assets/images/misc/coin.png);
-                }
-
                 &--hand {
                     background-image: url(../../assets/images/gear/hand_basic.png);
                 }
@@ -109,49 +97,21 @@
                 }
             }
 
-            &:nth-child(4),
-            &:nth-child(5) { // stamina/mana
-                height: 6%;
-                opacity: $stats-opacity;
-
-                .bubbles {
-                    height: 70%;
-                    width: 10%;
-                    border-radius: 20%;
-                    margin-left: 0.5vh;
-                    margin-right: 0.5vh;
-
-                    &--mana {
-                        border: 0.1vh solid $bubbles-mana;
-                        background-color: $bubbles-mana;
-                    }
-
-                    &--stamina {
-                        border: 0.1vh solid $bubbles-stamina;
-                        background-color: $bubbles-stamina;
-                    }
-                }
-
-                >:nth-child(2) {
-                    background-color: $default-black;
-                    border-bottom: 0.5vh ridge $border-color;
-                }
-            }
-
-            &:nth-child(6) { // gear
-                height: 22%;
-                opacity: $stats-opacity;
-
-                .row {
+            &:nth-child(4) { // misc
+                height: 12%;
+                div {
                     height: 100%;
-
-                    &.heightAdjustment {
-                        height: 35%;
-                    } 
                 }
             }
 
-            &:nth-child(7) { // active effects
+            &:nth-child(5) { // gear
+                height: 22%;
+                div {
+                    height: 100%;
+                }
+            }
+
+            &:nth-child(6) { // active effects
                 height: 12%;
                 background-color: $default-black;
                 opacity: $stats-opacity;

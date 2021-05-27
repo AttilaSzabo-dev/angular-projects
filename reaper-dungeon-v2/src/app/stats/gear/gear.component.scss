@@ -1,0 +1,39 @@
+@import "../../../assets/variables/variables";
+
+.container-fluid {
+    height: 100%;
+    width: 100%;
+    background-color: $default-black;
+    opacity: $stats-opacity;
+
+    @include border-big-bottom;
+
+    .flex-row {
+        height: 100%;
+
+        .flex-column {
+            height: 100%;
+            width: 33.2%;
+
+            &:nth-child(2) {
+                @include border-medium-left-right;
+            }
+
+            >:first-child {
+                @include border-medium-bottom;
+            }
+
+            div {
+                height: 100%;
+                width: 100%;
+
+                img {
+                    height: 60%;
+                    width: 60%;
+                    object-fit: contain;
+                }
+            }
+        }
+        
+    }
+}

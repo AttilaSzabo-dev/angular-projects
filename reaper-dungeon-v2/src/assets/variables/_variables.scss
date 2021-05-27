@@ -35,6 +35,19 @@
     border-bottom: 0.2vh ridge $border-color;
 }
 
+@mixin border-medium-left {
+    border-left: 0.3vh ridge $border-color;
+}
+
+@mixin border-medium-left-right {
+    border-left: 0.3vh ridge $border-color;
+    border-right: 0.3vh ridge $border-color;
+}
+
+@mixin border-medium-bottom {
+    border-bottom: 0.3vh groove $border-color;
+}
+
 @mixin border-small-bottom {
     border-bottom: 0.5vh ridge $border-color;
 }
@@ -48,12 +61,25 @@
     border-right: 0.9vh ridge $border-color;
 }
 
-@mixin border-small-left-top-bottom {
+@mixin border-small-left {
     border-left: 0.7vh ridge $border-color;
-    border-right: 0;
-    border-top: 0.5vh groove $border-color;
-    border-bottom: 0.5vh groove $border-color;
+    border-top: 0.5vh solid transparent;
+    border-right: 0.5vh solid transparent;
+    border-bottom: 0.5vh solid transparent;
+}
 
+@mixin border-small-left-hover {
+    border-left: 0.7vh ridge $hover-color;
+    border-top: 0.5vh groove $hover-color;
+    border-right: 0.5vh ridge $hover-color;
+    border-bottom: 0.5vh groove $hover-color;
+}
+
+@mixin border-small-left-bottom {
+    border-left: 0.7vh ridge $border-color;
+    border-bottom: 0.5vh groove $border-color;
+    border-right: 0.5vh solid transparent;
+    border-top: 0.5vh solid transparent;
 }
 
 
@@ -135,7 +161,7 @@ $font-size-6: 6vh;
                             font-size: $font-size-2-5;
     
                             &--border {
-                                @include border-small;
+                                @include border-small-left-bottom;
                             }
                         }
                     }
@@ -155,7 +181,11 @@ $font-size-6: 6vh;
                                 width: 40%;
                                 height: 100%;
                                 font-size: $font-size-2;
-                                @include border-small-left-top-bottom;
+                                @include border-small-left;
+
+                                &:hover {
+                                    @include border-small-left-hover;
+                                }
                             }
                         }
                     }

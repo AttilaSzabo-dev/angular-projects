@@ -9,6 +9,8 @@ import { ArenaComponent } from './arena/arena.component';
 import { HealthComponent } from './stats/health/health.component';
 import { AttackComponent } from './stats/attack/attack.component';
 import { DefenseComponent } from './stats/defense/defense.component';
+import { EnergyComponent } from './stats/energy/energy.component';
+import { GearComponent } from './stats/gear/gear.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { DefenseComponent } from './stats/defense/defense.component';
     ArenaComponent,
     HealthComponent,
     AttackComponent,
-    DefenseComponent
+    DefenseComponent,
+    EnergyComponent,
+    GearComponent
   ],
   imports: [
     BrowserModule,

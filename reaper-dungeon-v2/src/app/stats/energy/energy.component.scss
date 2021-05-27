@@ -1,0 +1,42 @@
+@import "../../../assets/variables/variables";
+
+.container-fluid {
+    height: 100%;
+    width: 100%;
+    background-color: $default-black;
+    opacity: $stats-opacity;
+
+    @include border-big-bottom;
+
+    .flex-column {
+        height: 100%;
+
+        .flex-row {
+            height: 50%;
+
+            &:first-child {
+                @include border-small-bottom;
+            }
+
+            :nth-child(2) {
+                @include border-medium-left;
+            }
+            
+            div {
+                width: 50%;
+                height: 100%;
+                
+                img {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: contain;
+
+                    &.coinPic {
+                        width: 80%;
+                        height: 60%;
+                    }
+                }
+            }
+        }
+    }
+}
