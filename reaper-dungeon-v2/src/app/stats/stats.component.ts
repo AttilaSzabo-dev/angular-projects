@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { StatsService } from '../shared/stats.service';
+
 @Component({
   selector: 'app-stats',
   templateUrl: './stats.component.html',
@@ -12,7 +14,7 @@ export class StatsComponent implements OnInit {
   attackAmount = 1;
   defenseAmount = 1;
 
-  constructor() { }
+  constructor(private statsService: StatsService) { }
 
   ngOnInit(): void {
   }

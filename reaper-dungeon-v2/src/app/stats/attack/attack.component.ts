@@ -1,20 +1,27 @@
 import { Component, OnInit } from '@angular/core';
 
+import { StatsService } from 'src/app/shared/stats.service';
+
 @Component({
   selector: 'app-attack',
   templateUrl: './attack.component.html',
   styleUrls: ['./attack.component.scss']
 })
 export class AttackComponent implements OnInit {
-  healthAmount = 100;
-  initiativeAmount = 25;
-  
-  swordPic = "../../../assets/images/stat/attack/stat-sword.png"
-  handlePic = "../../../assets/images/stat/attack/sword-handling.png"
-  blacksmithPic = "../../../assets/images/stat/attack/blacksmith.png"
-  poisonPic = "../../../assets/images/stat/attack/poison.png"
 
-  constructor() { }
+  constructor(private statsService: StatsService) { }
+
+  levelAmount = this.statsService.levelAmount;
+
+  attackAmount = this.statsService.attackAmount;
+  handleAmount = this.statsService.handleAmount;
+  blacksmithAmount = this.statsService.blacksmithAmount;
+  poisonAmount = this.statsService.poisonAmount;
+
+  swordPic = this.statsService.swordPic;
+  attackHandlePic = this.statsService.attackHandlePic;
+  blacksmithPic = this.statsService.blacksmithPic;
+  poisonPic = this.statsService.poisonPic;
 
   ngOnInit() {
   }

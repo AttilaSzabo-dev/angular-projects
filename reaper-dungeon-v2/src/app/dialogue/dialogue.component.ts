@@ -8,14 +8,15 @@ import { DialogueService } from '../shared/dialogue.service';
   styleUrls: ['./dialogue.component.scss']
 })
 export class DialogueComponent implements OnInit {
+
+  constructor(private dialogueService: DialogueService) { }
+
   question = "";
   answerOne = "";
   answerTwo = "";
   answerThree = "";
   whereAreWe = 0;
   searchMore = false;
-
-  constructor(private dialogueService: DialogueService) { }
 
   ngOnInit() {
     this.question = this.dialogueService.book[0]["question"];

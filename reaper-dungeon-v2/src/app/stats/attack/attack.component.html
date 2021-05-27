@@ -5,13 +5,13 @@
                 <div class="d-flex justify-content-center align-items-center stat stat-pic">
                     <img [src]="swordPic" alt="">
                 </div>
-                <div class="d-flex justify-content-center align-items-center stat stat-amount stat-amount--border">{{ healthAmount }}</div>
+                <div class="d-flex justify-content-center align-items-center stat stat-amount stat-amount--border">{{ attackAmount }}</div>
             </div>
             <div class="d-flex flex-row my-auto stat-wrapper">
                 <div class="d-flex justify-content-center align-items-center stat stat-pic">
-                    <img [src]="handlePic" alt="">
+                    <img [src]="attackHandlePic" alt="">
                 </div>
-                <div class="d-flex justify-content-center align-items-center stat stat-amount stat-amount--border">{{ initiativeAmount }}</div>
+                <div class="d-flex justify-content-center align-items-center stat stat-amount stat-amount--border">{{ handleAmount }}</div>
             </div>
         </div>
         <div class="col-4 d-flex flex-column p-0 sections">
@@ -19,15 +19,34 @@
                 <div class="d-flex justify-content-center align-items-center stat stat-pic">
                     <img [src]="blacksmithPic" alt="">
                 </div>
-                <div class="d-flex justify-content-center align-items-center stat stat-amount stat-amount--border">{{ healthAmount }}</div>
+                <div class="d-flex justify-content-center align-items-center stat stat-amount stat-amount--border">{{ blacksmithAmount }}</div>
             </div>
             <div class="d-flex flex-row my-auto stat-wrapper">
                 <div class="d-flex justify-content-center align-items-center stat stat-pic">
                     <img [src]="poisonPic" alt="">
                 </div>
-                <div class="d-flex justify-content-center align-items-center stat stat-amount stat-amount--border">{{ initiativeAmount }}</div>
+                <div class="d-flex justify-content-center align-items-center stat stat-amount stat-amount--border">{{ poisonAmount }}</div>
             </div>
         </div>
-        <div class="col-4 sections"></div>
+        <div class="col-4 d-flex flex-column p-0 sections">
+            <div class="d-flex flex-row stat-wrapper stat-wrapper--level">
+                <div class="d-flex justify-content-center align-items-center stat stat-pic">
+                    <img [src]="attackHandlePic" alt="">
+                </div>
+                <div class="d-flex justify-content-center align-items-center stat stat-amount stat-amount--border">{{ levelAmount }}</div>
+            </div>
+            <div class="d-flex flex-row my-auto stat-wrapper stat-wrapper--level">
+                <div class="d-flex justify-content-center align-items-center stat stat-pic">
+                    <img [src]="blacksmithPic" alt="">
+                </div>
+                <div class="d-flex justify-content-center align-items-center stat stat-amount stat-amount--border">{{ levelAmount }}</div>
+            </div>
+            <div class="d-flex flex-row stat-wrapper stat-wrapper--level">
+                <div class="d-flex justify-content-center align-items-center stat stat-pic">
+                    <img [src]="poisonPic" alt="">
+                </div>
+                <div class="d-flex justify-content-center align-items-center stat stat-amount stat-amount--border">{{ levelAmount }}</div>
+            </div>
+        </div>
     </div>
 </div>
