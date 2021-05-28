@@ -11,6 +11,7 @@ import { AttackComponent } from './stats/attack/attack.component';
 import { DefenseComponent } from './stats/defense/defense.component';
 import { EnergyComponent } from './stats/energy/energy.component';
 import { GearComponent } from './stats/gear/gear.component';
+import { EffectsComponent } from './stats/effects/effects.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { GearComponent } from './stats/gear/gear.component';
     AttackComponent,
     DefenseComponent,
     EnergyComponent,
-    GearComponent
+    GearComponent,
+    EffectsComponent
   ],
   imports: [
     BrowserModule,

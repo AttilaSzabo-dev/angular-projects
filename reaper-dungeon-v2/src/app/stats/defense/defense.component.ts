@@ -11,6 +11,12 @@ export class DefenseComponent implements OnInit {
 
   constructor(private statsService: StatsService) { }
 
+  defenseHover = false;
+
+  onHover(id: string, condition: boolean) {
+    this.statsService.onLevelMouse(id, condition);
+  }
+
   levelAmount = this.statsService.levelAmount;
 
   defenseAmount = this.statsService.defenseAmount;
@@ -23,7 +29,14 @@ export class DefenseComponent implements OnInit {
   barrierPic = this.statsService.barrierPic;
   thornPic = this.statsService.thornPic;
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.statsService.detectHover.subscribe(
+      (hoverState) => {
+        if (hoverState === 3) {
+          this.defenseHover = true;
+        }else this.defenseHover = false;
+      }
+    );
   }
 
 }

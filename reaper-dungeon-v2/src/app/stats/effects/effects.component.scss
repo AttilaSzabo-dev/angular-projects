@@ -1,0 +1,27 @@
+@import "../../../assets/variables/variables";
+
+.container-fluid {
+    height: 100%;
+    width: 100%;
+    background-color: $default-black;
+    opacity: $stats-opacity;
+
+    .flex-row {
+        height: 100%;
+
+        .flex-column {
+            width: 25%;
+
+            :first-child {
+                @include border-medium-bottom;
+            }
+            &:not(:last-child) {
+                @include border-medium-right;
+            }
+            
+            div {
+                height: 50%;
+            }
+        }
+    }
+}

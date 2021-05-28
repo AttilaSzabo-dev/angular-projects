@@ -1,11 +1,41 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable, Output } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class StatsService {
-  levelAmount = 0;
 
+  @Output() detectHover: EventEmitter<number> = new EventEmitter();
+
+  onLevelMouse(zone: string, condition: boolean) {
+    switch (zone) {
+      case "health":
+        if (condition) {
+          this.detectHover.emit(1);
+        } else {
+          this.detectHover.emit(0);
+        } 
+        break;
+      case "attack":
+        if (condition) {
+          this.detectHover.emit(2);
+        } else {
+          this.detectHover.emit(0);
+        } 
+        break;
+      case "defense":
+        if (condition) {
+          this.detectHover.emit(3);
+        } else {
+          this.detectHover.emit(0);
+        } 
+        break;
+      default:
+        break;
+    }
+  }
+
+  levelAmount = 0;
   //health values
   healthAmount = 100;
   initiativeAmount = 10;
@@ -49,12 +79,12 @@ export class StatsService {
   shadowPic = "../../../assets/images/misc/shadowPotion.png";
   coinPic = "../../../assets/images/misc/coin.png";
   //gear pics
-  hand = "../../../assets/images/gear/hand_basic.png";
-  foot = "";
-  torso = "../../../assets/images/gear/armor_basic.png";
-  leg = "../../../assets/images/gear/leg_basic.png";
-  weapon = "../../../assets/images/gear/sword_basic.png";
-  shield = "";
+  hand = "../../../assets/images/gear/hand/Weathered_Hand.png";
+  feet = "../../../assets/images/gear/feet/Weathered_Feet.png";
+  torso = "../../../assets/images/gear/torso/Weathered_Torso.png";
+  leg = "../../../assets/images/gear/leg/Weathered_Leg.png";
+  weapon = "../../../assets/images/gear/weapon/Weathered_Sword.png";
+  shield = "../../../assets/images/gear/shield/Weathered_Shield.png";
 
   constructor() { }
 }

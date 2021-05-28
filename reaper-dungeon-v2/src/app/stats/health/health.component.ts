@@ -11,6 +11,12 @@ export class HealthComponent implements OnInit {
 
   constructor(private statsService: StatsService) { }
 
+  healthHover = false;
+
+  onHover(id: string, condition: boolean) {
+    this.statsService.onLevelMouse(id, condition);
+  }
+
   levelAmount = this.statsService.levelAmount;
 
   healthAmount = this.statsService.healthAmount;
@@ -24,6 +30,13 @@ export class HealthComponent implements OnInit {
   physicalResPic = this.statsService.physicalResPic;
 
   ngOnInit() {
+    this.statsService.detectHover.subscribe(
+      (hoverState) => {
+        if (hoverState === 1) {
+          this.healthHover = true;
+        }else this.healthHover = false;
+      }
+    );
   }
 
 }

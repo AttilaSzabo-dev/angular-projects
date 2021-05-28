@@ -26,12 +26,9 @@
             div {
                 height: 100%;
                 width: 100%;
-
-                img {
-                    height: 60%;
-                    width: 60%;
-                    object-fit: contain;
-                }
+                background-size: auto 80%;
+                background-repeat: no-repeat;
+                background-position: center;
             }
         }
         

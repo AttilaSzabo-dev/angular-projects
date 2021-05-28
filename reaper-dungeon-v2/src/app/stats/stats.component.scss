@@ -7,105 +7,37 @@
         height: 100%;
 
         .row {
-            .pic {
-                width: 100%;
-                height: 100%;
-                background-repeat: no-repeat;
-                background-size: contain;
-                background-position: center center;
-                background-color: $default-black;
-
-                &--hand {
-                    background-image: url(../../assets/images/gear/hand_basic.png);
-                }
-
-                &--leg {
-                    background-image: url(../../assets/images/gear/leg_basic.png);
-                }
-
-                &--sword {
-                    background-image: url(../../assets/images/gear/sword_basic.png);
-                }
-
-                &--armor {
-                    background-image: url(../../assets/images/gear/armor_basic.png);
-                }
-
-                &.pic-border {
-                    &--big {
-                        border-right: 0.8vh ridge $border-color;
-                        border-bottom: 0.5vh ridge $border-color;
-                    }
-                    &--small {
-                        border-right: 0.5vh ridge $border-color;
-                        border-bottom: 0.5vh ridge $border-color;
-                    }
-                }
-            }
-
-            .text {
-
-                &--gold {
-                    background-color: $default-black;
-                    font-size: $font-size-3;
-                }
-
-                &.text-border {
-                    &--small {
-                        border-right: 0.5vh ridge $border-color;
-                        border-bottom: 0.5vh ridge $border-color;
-                    }
-
-                    &--small_bottom {
-                        border-bottom: 0.5vh ridge $border-color;
-                    }
-                }
-
-                .textInner {
-                    width: 30%;
-                    height: 45%;
-                    background-color: $default-black;
-                    opacity: $stats-opacity;
-                    font-size: $font-size-3;
-
-                    &.textInner-border {
-                        &--big {
-                            @include border-big;
-                        }
-                    }
-                }
-            }
 
             &:nth-child(1) { // health
-                height: 18%;
+                height: 17%;
                 div {
                     height: 100%;
                 }
             }
 
             &:nth-child(2) { // attack
-                height: 18%;
+                height: 17%;
                 div {
                     height: 100%;
                 }
             }
 
             &:nth-child(3) { // defense
-                height: 18%;
+                height: 17%;
                 div {
                     height: 100%;
                 }
             }
 
-            &:nth-child(4) { // misc
+            &:nth-child(4) { // gear
+                height: 25%;
+                div {
+                    height: 100%;
+                }
+            }
+
+            &:nth-child(5) { // energy
                 height: 12%;
-                div {
-                    height: 100%;
-                }
-            }
-
-            &:nth-child(5) { // gear
-                height: 22%;
                 div {
                     height: 100%;
                 }
@@ -113,8 +45,9 @@
 
             &:nth-child(6) { // active effects
                 height: 12%;
-                background-color: $default-black;
-                opacity: $stats-opacity;
+                div {
+                    height: 100%;
+                }
             } 
         }
     }

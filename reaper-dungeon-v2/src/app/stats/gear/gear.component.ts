@@ -11,12 +11,14 @@ export class GearComponent implements OnInit {
 
   constructor(private statsService: StatsService) { }
 
-  hand = this.statsService.hand;
-  foot = this.statsService.foot;
-  torso = this.statsService.torso;
-  leg = this.statsService.leg;
-  weapon = this.statsService.weapon;
-  shield = this.statsService.shield;
+  
+
+  hand = "background-image: url(" + this.statsService.hand + ")";
+  feet = "background-image: url(" + this.statsService.feet + ")";
+  torso = "background-image: url(" + this.statsService.torso + ")";
+  leg = "background-image: url(" + this.statsService.leg + ")";
+  weapon = "background-image: url(" + this.statsService.weapon + ")";
+  shield = "background-image: url(" + this.statsService.shield + ")";
 
   ngOnInit(): void {
   }

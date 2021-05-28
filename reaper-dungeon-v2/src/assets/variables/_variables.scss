@@ -3,6 +3,7 @@
     src: url(../font/fantasy.ttf);
 }
 
+// borders
 @mixin border-big {
     border-top: 0.8vh groove $border-color;
     border-left: 0.8vh ridge $border-color;
@@ -15,13 +16,6 @@
     border-left: 0.8vh ridge $hover-color;
     border-right: 0.8vh ridge $hover-color;
     border-bottom: 0.8vh groove $hover-color;
-}
-
-@mixin border-extra-small {
-    border-top: 0.2vh groove $border-color;
-    border-left: 0.2vh ridge $border-color;
-    border-right: 0.2vh ridge $border-color;
-    border-bottom: 0.2vh groove $border-color;
 }
 
 @mixin border-small {
@@ -37,6 +31,10 @@
 
 @mixin border-medium-left {
     border-left: 0.3vh ridge $border-color;
+}
+
+@mixin border-medium-right {
+    border-right: 0.3vh ridge $border-color;
 }
 
 @mixin border-medium-left-right {
@@ -58,7 +56,7 @@
 
 @mixin border-small-left-right {
     border-left: 0.5vh ridge $border-color;
-    border-right: 0.9vh ridge $border-color;
+    border-right: 0.9vh groove $border-color;
 }
 
 @mixin border-small-left {
@@ -82,6 +80,13 @@
     border-top: 0.5vh solid transparent;
 }
 
+@mixin border-small-left-bottom-hover {
+    border-left: 0.7vh ridge $hover-color;
+    border-bottom: 0.5vh groove $hover-color;
+    border-right: 0.5vh solid $hover-color;
+    border-top: 0.5vh solid $hover-color;
+}
+
 
 
 // colors
@@ -103,6 +108,10 @@ $font-size-3: 3vh;
 $font-size-4: 4vh;
 $font-size-5: 5vh;
 $font-size-6: 6vh;
+
+@mixin transition {
+    transition: all .5s;
+}
 
 //stat mixin
 @mixin stat {
@@ -159,10 +168,15 @@ $font-size-6: 6vh;
                             width: 55%;
                             height: 50%;
                             font-size: $font-size-2-5;
+                            @include transition;
     
                             &--border {
                                 @include border-small-left-bottom;
                             }
+                        }
+
+                        &.hoverColor {
+                            @include border-small-left-bottom-hover;
                         }
                     }
 
@@ -182,6 +196,7 @@ $font-size-6: 6vh;
                                 height: 100%;
                                 font-size: $font-size-2;
                                 @include border-small-left;
+                                @include transition;
 
                                 &:hover {
                                     @include border-small-left-hover;

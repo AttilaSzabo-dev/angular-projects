@@ -11,6 +11,12 @@ export class AttackComponent implements OnInit {
 
   constructor(private statsService: StatsService) { }
 
+  attackHover = false;
+
+  onHover(id: string, condition: boolean) {
+    this.statsService.onLevelMouse(id, condition);
+  }
+
   levelAmount = this.statsService.levelAmount;
 
   attackAmount = this.statsService.attackAmount;
@@ -24,6 +30,13 @@ export class AttackComponent implements OnInit {
   poisonPic = this.statsService.poisonPic;
 
   ngOnInit() {
+    this.statsService.detectHover.subscribe(
+      (hoverState) => {
+        if (hoverState === 2) {
+          this.attackHover = true;
+        }else this.attackHover = false;
+      }
+    );
   }
 
 }

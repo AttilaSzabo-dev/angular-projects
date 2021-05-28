@@ -11,7 +11,9 @@
                 <div class="d-flex justify-content-center align-items-center stat stat-pic">
                     <img [src]="initiativePic" alt="">
                 </div>
-                <div class="d-flex justify-content-center align-items-center stat stat-amount stat-amount--border">{{ initiativeAmount }}</div>
+                <div 
+                    class="d-flex justify-content-center align-items-center stat stat-amount stat-amount--border"
+                    [ngClass]="{hoverColor: healthHover}">{{ initiativeAmount }}</div>
             </div>
         </div>
         <div class="col-4 d-flex flex-column p-0 sections">
@@ -19,13 +21,17 @@
                 <div class="d-flex justify-content-center align-items-center stat stat-pic">
                     <img [src]="poisonResPic" alt="">
                 </div>
-                <div class="d-flex justify-content-center align-items-center stat stat-amount stat-amount--border">{{ poisonResAmount }}</div>
+                <div 
+                    class="d-flex justify-content-center align-items-center stat stat-amount stat-amount--border"
+                    [ngClass]="{hoverColor: healthHover}">{{ poisonResAmount }}</div>
             </div>
             <div class="d-flex flex-row my-auto stat-wrapper">
                 <div class="d-flex justify-content-center align-items-center stat stat-pic">
                     <img [src]="physicalResPic" alt="">
                 </div>
-                <div class="d-flex justify-content-center align-items-center stat stat-amount stat-amount--border">{{ physicalResAmount }}</div>
+                <div 
+                    class="d-flex justify-content-center align-items-center stat stat-amount stat-amount--border"
+                    [ngClass]="{hoverColor: healthHover}">{{ physicalResAmount }}</div>
             </div>
         </div>
         <div class="col-4 d-flex flex-column p-0 sections">
@@ -33,19 +39,28 @@
                 <div class="d-flex justify-content-center align-items-center stat stat-pic">
                     <img [src]="initiativePic" alt="">
                 </div>
-                <div class="d-flex justify-content-center align-items-center stat stat-amount stat-amount--border">{{ levelAmount }}</div>
+                <div 
+                    class="d-flex justify-content-center align-items-center stat stat-amount stat-amount--border"
+                    (mouseenter)="onHover('health', true)"
+                    (mouseleave)="onHover('health', false)">{{ levelAmount }}</div>
             </div>
             <div class="d-flex flex-row my-auto stat-wrapper stat-wrapper--level">
                 <div class="d-flex justify-content-center align-items-center stat stat-pic">
                     <img [src]="poisonResPic" alt="">
                 </div>
-                <div class="d-flex justify-content-center align-items-center stat stat-amount stat-amount--border">{{ levelAmount }}</div>
+                <div 
+                    class="d-flex justify-content-center align-items-center stat stat-amount stat-amount--border"
+                    (mouseenter)="onHover('health', true)"
+                    (mouseleave)="onHover('health', false)">{{ levelAmount }}</div>
             </div>
             <div class="d-flex flex-row stat-wrapper stat-wrapper--level">
                 <div class="d-flex justify-content-center align-items-center stat stat-pic">
                     <img [src]="physicalResPic" alt="">
                 </div>
-                <div class="d-flex justify-content-center align-items-center stat stat-amount stat-amount--border">{{ levelAmount }}</div>
+                <div 
+                    class="d-flex justify-content-center align-items-center stat stat-amount stat-amount--border"
+                    (mouseenter)="onHover('health', true)"
+                    (mouseleave)="onHover('health', false)">{{ levelAmount }}</div>
             </div>
         </div>
     </div>
