@@ -1,4 +1,4 @@
-@import "../../../assets/variables/variables";
+@import "../../../assets/variables/borders";
 
 .container-fluid {
     height: 100%;
@@ -12,11 +12,26 @@
         .flex-column {
             width: 25%;
 
-            :first-child {
-                @include border-medium-bottom;
+            >:first-child {
+                @include border-small-bottom;
+                @include transition;
+
+                &:hover {
+                    @include border-small-bottom-hover;
+                }
             }
+
+            >:last-child {
+                @include border-small-transparent;
+                @include transition;
+
+                &:hover {
+                    @include border-small-transparent-hover;
+                }
+            }
+
             &:not(:last-child) {
-                @include border-medium-right;
+                @include border-small-right;
             }
             
             div {

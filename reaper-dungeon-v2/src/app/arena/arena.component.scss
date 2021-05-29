@@ -1,4 +1,4 @@
-@import "../../assets/variables/variables";
+@import "../../assets/variables/borders";
 
 .container-fluid {
     height: 100%;
@@ -34,7 +34,7 @@
 
                 &-border {
                     &--big {
-                        @include border-big;
+                        @include border-bigest;
                     }
                 }
             }
@@ -51,7 +51,7 @@
 
                 &-border {
                     &--small {
-                        @include border-small;
+                        @include border-medium;
                     }
                 }
             }
@@ -77,7 +77,7 @@
 
                 &-border {
                     &--big {
-                        @include border-big;
+                        @include border-bigest;
                     }
                 }
             }
@@ -87,13 +87,12 @@
                 height: 85%;
                 background-color: $default-black;
 
-                @include border-big;
+                @include border-bigest;
             }
         }
 
         div {
             height: 100%;
-            /* border: 1px solid red; */
         }
     }
     

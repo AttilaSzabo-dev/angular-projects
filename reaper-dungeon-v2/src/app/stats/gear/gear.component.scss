@@ -1,4 +1,4 @@
-@import "../../../assets/variables/variables";
+@import "../../../assets/variables/borders";
 
 .container-fluid {
     height: 100%;
@@ -6,7 +6,7 @@
     background-color: $default-black;
     opacity: $stats-opacity;
 
-    @include border-big-bottom;
+    @include border-bigest-bottom;
 
     .flex-row {
         height: 100%;
@@ -16,11 +16,25 @@
             width: 33.2%;
 
             &:nth-child(2) {
-                @include border-medium-left-right;
+                @include border-small-left-right;
             }
 
             >:first-child {
-                @include border-medium-bottom;
+                @include border-small-bottom;
+                @include transition;
+
+                &:hover {
+                    @include border-small-bottom-hover;
+                }
+            }
+
+            >:last-child {
+                @include border-small-transparent;
+                @include transition;
+
+                &:hover {
+                    @include border-small-transparent-hover;
+                }
             }
 
             div {

@@ -1,4 +1,4 @@
-@import "../../../assets/variables/variables";
+@import "../../../assets/variables/borders";
 
 .container-fluid {
     height: 100%;
@@ -6,7 +6,7 @@
     background-color: $default-black;
     opacity: $stats-opacity;
 
-    @include border-big-bottom;
+    @include border-bigest-bottom;
 
     .flex-column {
         height: 100%;
@@ -15,11 +15,11 @@
             height: 50%;
 
             &:first-child {
-                @include border-small-bottom;
+                @include border-medium-bottom;
             }
 
             :nth-child(2) {
-                @include border-medium-left;
+                @include border-small-left;
             }
             
             div {

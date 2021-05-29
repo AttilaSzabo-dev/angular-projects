@@ -1,4 +1,4 @@
-@import "../../assets/variables/variables";
+@import "../../assets/variables/borders";
 
 .container {
     height: 100%;
@@ -13,7 +13,7 @@
             opacity: $dialogue-opacity;
             padding: 1rem;
 
-            @include border-big;
+            @include border-bigest;
         }
 
         :first-child {
@@ -33,7 +33,7 @@
                 opacity: 1;
                 cursor: pointer;
 
-                @include border-big-hover;
+                @include border-bigest-hover;
             }
         }
     }

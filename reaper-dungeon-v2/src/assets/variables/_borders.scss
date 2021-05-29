@@ -1,0 +1,123 @@
+@import "./variables";
+
+// borders
+    // arena / dialogue
+    @mixin border-bigest {
+        border-top: 0.8vh groove $border-color;
+        border-left: 0.8vh ridge $border-color;
+        border-right: 0.8vh ridge $border-color;
+        border-bottom: 0.8vh groove $border-color;
+    }
+
+    @mixin border-bigest-hover {
+        border-top: 0.8vh groove $hover-color;
+        border-left: 0.8vh ridge $hover-color;
+        border-right: 0.8vh ridge $hover-color;
+        border-bottom: 0.8vh groove $hover-color;
+    }
+
+    @mixin border-medium {
+        border-top: 0.5vh groove $border-color;
+        border-left: 0.5vh ridge $border-color;
+        border-right: 0.5vh ridge $border-color;
+        border-bottom: 0.5vh groove $border-color;
+    }
+    // END
+
+    // stats
+    @mixin border-extra-small-bottom {
+        border-bottom: 0.2vh ridge $border-color;
+    }
+
+    @mixin border-mix-medium-big {
+        border-left: 0.5vh ridge $border-color;
+        border-right: 0.9vh groove $border-color;
+    }
+
+    @mixin border-small-left {
+        border-top: 0.3vh groove transparent;
+        border-right: 0.3vh ridge transparent;
+        border-bottom: 0.3vh ridge transparent;
+        border-left: 0.3vh groove $border-color;
+    }
+    
+    @mixin border-small-left-hover {
+        border-top: 0.3vh groove $hover-color;
+        border-right: 0.3vh ridge $hover-color;
+        border-bottom: 0.3vh ridge $hover-color;
+        border-left: 0.3vh groove $hover-color;
+    }
+
+    @mixin border-small-left-bottom {
+        border-top: 0.3vh groove transparent;
+        border-right: 0.3vh ridge transparent;
+        border-bottom: 0.3vh ridge $border-color;
+        border-left: 0.3vh groove $border-color;
+    }
+    
+    @mixin border-small-left-bottom-hover {
+        border-top: 0.3vh groove $hover-color;
+        border-right: 0.3vh ridge $hover-color;
+        border-bottom: 0.3vh ridge $hover-color;
+        border-left: 0.3vh groove $hover-color;
+    }
+    // END
+
+    // gear
+    @mixin border-small-left-right {
+        border-left: 0.3vh ridge $border-color;
+        border-right: 0.3vh ridge $border-color;
+    }
+    // END
+
+    // energy
+    @mixin border-small-left {
+        /* border-left: 0.3vh ridge $border-color; */
+    }
+
+    @mixin border-medium-bottom {
+        border-bottom: 0.5vh ridge $border-color;
+    }
+    // END
+
+    // effects
+    @mixin border-small-right {
+        border-right: 0.3vh ridge $border-color;
+    }
+    // END
+
+    // effects / gear
+    @mixin border-small-bottom {
+        border-top: 0.3vh groove transparent;
+        border-right: 0.3vh ridge transparent;
+        border-bottom: 0.3vh ridge $border-color;
+        border-left: 0.3vh groove transparent;
+    }
+    
+    @mixin border-small-bottom-hover {
+        border-top: 0.3vh groove $hover-color;
+        border-right: 0.3vh ridge $hover-color;
+        border-bottom: 0.3vh ridge $hover-color;
+        border-left: 0.3vh groove $hover-color;
+    }
+
+    @mixin border-small-transparent {
+        border-top: 0.3vh groove transparent;
+        border-right: 0.3vh ridge transparent;
+        border-bottom: 0.3vh ridge transparent;
+        border-left: 0.3vh groove transparent;
+    }
+    
+    @mixin border-small-transparent-hover {
+        border-top: 0.3vh groove $hover-color;
+        border-right: 0.3vh ridge $hover-color;
+        border-bottom: 0.3vh ridge $hover-color;
+        border-left: 0.3vh groove $hover-color;
+    }
+    // END
+
+    // stats / energy / gear
+    @mixin border-bigest-bottom {
+        border-bottom: 0.8vh ridge $border-color;
+    }
+    // END
