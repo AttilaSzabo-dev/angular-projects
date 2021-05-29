@@ -51,7 +51,7 @@ export class StatsService {
   defenseHandleAmount = 0;
   barrierAmount = 0;
   thornAmount = 0;
-  //misc values
+  //energy values
   manaAmount = 0;
   staminaAmount = 0;
   shadowAmount = 0;
@@ -73,7 +73,7 @@ export class StatsService {
   shieldHandlePic = "../../../assets/images/stat/defense/shield-handle2.png";
   barrierPic = "../../../assets/images/stat/defense/shield-barrier2.png";
   thornPic = "../../../assets/images/stat/defense/shield-thorn2.png";
-  //misc pics
+  //energy pics
   manaPic = "../../../assets/images/misc/mana.png";
   staminaPic = "../../../assets/images/misc/stamina.png";
   shadowPic = "../../../assets/images/misc/shadowPotion.png";

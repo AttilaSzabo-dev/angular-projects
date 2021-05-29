@@ -16,10 +16,10 @@ export class EnergyComponent implements OnInit {
   shadowAmount = this.statsService.shadowAmount;
   coinAmount = this.statsService.coinAmount;
 
-  manaPic = this.statsService.manaPic;
-  staminaPic = this.statsService.staminaPic;
-  shadowPic = this.statsService.shadowPic;
-  coinPic = this.statsService.coinPic;
+  manaPic = "background-image: url(" + this.statsService.manaPic + ")";
+  staminaPic = "background-image: url(" + this.statsService.staminaPic + ")";
+  shadowPic = "background-image: url(" + this.statsService.shadowPic + ")";
+  coinPic = "background-image: url(" + this.statsService.coinPic + ")";
 
   ngOnInit() {
   }
