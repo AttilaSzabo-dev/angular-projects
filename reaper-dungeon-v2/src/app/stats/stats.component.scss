@@ -1,3 +1,5 @@
+@import "../../assets/variables/borders";
+
 .container-fluid {
     height: 100%;
 
@@ -49,4 +51,20 @@
             } 
         }
     }
+}
+.pop-up-info {
+    background-color: $default-black;
+    opacity: $stats-opacity;
+    position: absolute;
+    visibility: hidden;
+    display: none;
+    width: 10rem;
+    height: 10rem;
+    border: 1px solid red;
+    user-select: none;
+    pointer-events: none;
+    z-index: 2000;
+
+    @include border-medium;
+    @include transition;
 }

@@ -5,35 +5,43 @@ import { EventEmitter, Injectable, Output } from '@angular/core';
 })
 export class StatsService {
 
-  @Output() detectHover = new EventEmitter<number>();
+  @Output() detectStatHover = new EventEmitter<number>();
+  @Output() detectGearHover = new EventEmitter<any>();
 
   onLevelHighlight(zone: string, condition: boolean) {
     switch (zone) {
       case "health":
         if (condition) {
-          this.detectHover.emit(1);
+          this.detectStatHover.emit(1);
         } else {
-          this.detectHover.emit(0);
+          this.detectStatHover.emit(0);
         } 
         break;
       case "attack":
         if (condition) {
-          this.detectHover.emit(2);
+          this.detectStatHover.emit(2);
         } else {
-          this.detectHover.emit(0);
+          this.detectStatHover.emit(0);
         } 
         break;
       case "defense":
         if (condition) {
-          this.detectHover.emit(3);
+          this.detectStatHover.emit(3);
         } else {
-          this.detectHover.emit(0);
+          this.detectStatHover.emit(0);
         } 
         break;
       default:
         break;
     }
   }
+
+  onGearHighLight(top: number, right: number, visibility: string, display: string) {
+    this.detectGearHover.emit({top: top, right: right, visibility: visibility, display: display});
+  }
+
+  elementTop = 0;
+  elementRight = 0;
 
   levelAmount = 0;
   //health values

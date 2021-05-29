@@ -30,7 +30,7 @@ export class DefenseComponent implements OnInit {
   thornPic = this.statsService.thornPic;
 
   ngOnInit() {
-    this.statsService.detectHover.subscribe(
+    this.statsService.detectStatHover.subscribe(
       (hoverState) => {
         if (hoverState === 3) {
           this.defenseHover = true;

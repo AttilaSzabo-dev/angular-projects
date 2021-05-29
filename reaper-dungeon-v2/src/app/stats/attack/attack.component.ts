@@ -30,7 +30,7 @@ export class AttackComponent implements OnInit {
   poisonPic = this.statsService.poisonPic;
 
   ngOnInit() {
-    this.statsService.detectHover.subscribe(
+    this.statsService.detectStatHover.subscribe(
       (hoverState) => {
         if (hoverState === 2) {
           this.attackHover = true;

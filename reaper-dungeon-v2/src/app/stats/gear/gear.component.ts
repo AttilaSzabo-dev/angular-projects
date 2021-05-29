@@ -11,8 +11,6 @@ export class GearComponent implements OnInit {
 
   constructor(private statsService: StatsService) { }
 
-  
-
   hand = "background-image: url(" + this.statsService.hand + ")";
   feet = "background-image: url(" + this.statsService.feet + ")";
   torso = "background-image: url(" + this.statsService.torso + ")";
@@ -20,7 +18,7 @@ export class GearComponent implements OnInit {
   weapon = "background-image: url(" + this.statsService.weapon + ")";
   shield = "background-image: url(" + this.statsService.shield + ")";
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
 }

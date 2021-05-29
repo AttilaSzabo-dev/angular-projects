@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 import { StatsService } from '../shared/stats.service';
 
@@ -8,11 +8,16 @@ import { StatsService } from '../shared/stats.service';
   styleUrls: ['./stats.component.scss']
 })
 export class StatsComponent implements OnInit {
-  goldAmount = 1000;
+  @ViewChild("popUp") el: ElementRef;
 
   constructor(private statsService: StatsService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.statsService.detectGearHover.subscribe((data) => {
+      this.el.nativeElement.style.top = data.top + "px";
+      this.el.nativeElement.style.left = data.right + "px";
+      this.el.nativeElement.style.visibility = data.visibility;
+      this.el.nativeElement.style.display = data.display;
+    });
   }
-
 }

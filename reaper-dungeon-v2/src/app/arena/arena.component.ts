@@ -25,8 +25,8 @@ export class ArenaComponent implements OnInit {
   options = "Options";
 
   enemyPicPath = "../../assets/images/monsters/helltooth.png";
-  carouselTest1 = "../../assets/images/misc/fireball.png"
-  carouselTest2 = "../../assets/images/misc/heal.png"
+  carouselTest1 = ""
+  carouselTest2 = ""
 
   constructor() { }
 

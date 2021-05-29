@@ -30,7 +30,7 @@ export class HealthComponent implements OnInit {
   physicalResPic = this.statsService.physicalResPic;
 
   ngOnInit() {
-    this.statsService.detectHover.subscribe(
+    this.statsService.detectStatHover.subscribe(
       (hoverState) => {
         if (hoverState === 1) {
           this.healthHover = true;
