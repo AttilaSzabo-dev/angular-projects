@@ -5,9 +5,9 @@ import { EventEmitter, Injectable, Output } from '@angular/core';
 })
 export class StatsService {
 
-  @Output() detectHover: EventEmitter<number> = new EventEmitter();
+  @Output() detectHover = new EventEmitter<number>();
 
-  onLevelMouse(zone: string, condition: boolean) {
+  onLevelHighlight(zone: string, condition: boolean) {
     switch (zone) {
       case "health":
         if (condition) {
@@ -60,19 +60,19 @@ export class StatsService {
 
   // health pics
   healthPic = "../../../assets/images/stat/health/heart.png";
-  initiativePic = "../../../assets/images/stat/health/initiative.png";
-  poisonResPic = "../../../assets/images/stat/health/poison.png";
-  physicalResPic = "../../../assets/images/stat/health/physical.png";
+  initiativePic = "../../../assets/images/stat/health/health-initiative2.png";
+  poisonResPic = "../../../assets/images/stat/health/health-poisonRes2.png";
+  physicalResPic = "../../../assets/images/stat/health/health-physicalRes2.png";
   //attack pics
   swordPic = "../../../assets/images/stat/attack/stat-sword.png";
-  attackHandlePic = "../../../assets/images/stat/attack/sword-handling.png";
-  blacksmithPic = "../../../assets/images/stat/attack/blacksmith.png";
-  poisonPic = "../../../assets/images/stat/attack/poison.png";
+  attackHandlePic = "../../../assets/images/stat/attack/sword-handle2.png";
+  blacksmithPic = "../../../assets/images/stat/attack/sword-blacksmith2.png";
+  poisonPic = "../../../assets/images/stat/attack/sword-poison2.png";
   //shield pics
   shieldPic = "../../../assets/images/stat/defense/shield.png";
-  shieldHandlePic = "../../../assets/images/stat/defense/shield-handling.png";
-  barrierPic = "../../../assets/images/stat/defense/barrier.png";
-  thornPic = "../../../assets/images/stat/defense/thorn.png";
+  shieldHandlePic = "../../../assets/images/stat/defense/shield-handle2.png";
+  barrierPic = "../../../assets/images/stat/defense/shield-barrier2.png";
+  thornPic = "../../../assets/images/stat/defense/shield-thorn2.png";
   //misc pics
   manaPic = "../../../assets/images/misc/mana.png";
   staminaPic = "../../../assets/images/misc/stamina.png";

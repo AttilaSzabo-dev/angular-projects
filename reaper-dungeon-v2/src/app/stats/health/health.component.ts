@@ -14,7 +14,7 @@ export class HealthComponent implements OnInit {
   healthHover = false;
 
   onHover(id: string, condition: boolean) {
-    this.statsService.onLevelMouse(id, condition);
+    this.statsService.onLevelHighlight(id, condition);
   }
 
   levelAmount = this.statsService.levelAmount;
