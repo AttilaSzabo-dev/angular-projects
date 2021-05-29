@@ -34,14 +34,14 @@
         border-right: 0.9vh groove $border-color;
     }
 
-    @mixin border-small-left {
-        border-top: 0.3vh groove transparent;
+    @mixin border-small-left-top {
+        border-top: 0.3vh groove $border-color;
         border-right: 0.3vh ridge transparent;
         border-bottom: 0.3vh ridge transparent;
         border-left: 0.3vh groove $border-color;
     }
     
-    @mixin border-small-left-hover {
+    @mixin border-small-left-top-hover {
         border-top: 0.3vh groove $hover-color;
         border-right: 0.3vh ridge $hover-color;
         border-bottom: 0.3vh ridge $hover-color;
@@ -72,7 +72,17 @@
 
     // energy
     @mixin border-small-left {
-        /* border-left: 0.3vh ridge $border-color; */
+        border-top: 0.3vh groove transparent;
+        border-right: 0.3vh ridge transparent;
+        border-bottom: 0.3vh ridge transparent;
+        border-left: 0.3vh groove $border-color;
+    }
+    
+    @mixin border-small-left-hover {
+        border-top: 0.3vh groove $hover-color;
+        border-right: 0.3vh ridge $hover-color;
+        border-bottom: 0.3vh ridge $hover-color;
+        border-left: 0.3vh groove $hover-color;
     }
 
     @mixin border-medium-bottom {
