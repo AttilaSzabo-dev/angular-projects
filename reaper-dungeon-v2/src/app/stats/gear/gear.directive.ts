@@ -14,11 +14,11 @@ export class GearDirective {
     const elementTop = element.top;
     const elementRight = element.right;
 
-    this.statService.onGearHighLight(elementTop, elementRight, "visible", "block");
+    this.statService.onGearHighLight(elementTop, elementRight, "block");
   }
 
   @HostListener("mouseleave") onMouseLeave() {
-    this.statService.onGearHighLight(0, 0, "hidden", "none");
+    this.statService.onGearHighLight(0, 0, "none");
   }
 
 }

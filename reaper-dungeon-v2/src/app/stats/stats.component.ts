@@ -16,7 +16,6 @@ export class StatsComponent implements OnInit {
     this.statsService.detectGearHover.subscribe((data) => {
       this.el.nativeElement.style.top = data.top + "px";
       this.el.nativeElement.style.left = data.right + "px";
-      this.el.nativeElement.style.visibility = data.visibility;
       this.el.nativeElement.style.display = data.display;
     });
   }

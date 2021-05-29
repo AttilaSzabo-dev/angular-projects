@@ -36,8 +36,8 @@ export class StatsService {
     }
   }
 
-  onGearHighLight(top: number, right: number, visibility: string, display: string) {
-    this.detectGearHover.emit({top: top, right: right, visibility: visibility, display: display});
+  onGearHighLight(top: number, right: number, display: string) {
+    this.detectGearHover.emit({top: top, right: right, display: display});
   }
 
   elementTop = 0;
