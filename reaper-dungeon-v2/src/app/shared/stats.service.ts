@@ -40,9 +40,6 @@ export class StatsService {
     this.detectGearHover.emit({top: top, right: right, display: display});
   }
 
-  elementTop = 0;
-  elementRight = 0;
-
   levelAmount = 0;
   //health values
   healthAmount = 100;
@@ -67,32 +64,25 @@ export class StatsService {
 
 
   // health pics
-  healthPic = "../../../assets/images/stat/health/heart.png";
-  initiativePic = "../../../assets/images/stat/health/health-initiative2.png";
-  poisonResPic = "../../../assets/images/stat/health/health-poisonRes2.png";
-  physicalResPic = "../../../assets/images/stat/health/health-physicalRes2.png";
+  healthPic = "background-image: url('../../assets/images/stat/health/heart.png')";
+  initiativePic = "background-image: url('../../assets/images/stat/health/health-initiative2.png')";
+  poisonResPic = "background-image: url('../../assets/images/stat/health/health-poisonRes2.png')";
+  physicalResPic = "background-image: url('../../assets/images/stat/health/health-physicalRes2.png')";
   //attack pics
-  swordPic = "../../../assets/images/stat/attack/stat-sword.png";
-  attackHandlePic = "../../../assets/images/stat/attack/sword-handle2.png";
-  blacksmithPic = "../../../assets/images/stat/attack/sword-blacksmith2.png";
-  poisonPic = "../../../assets/images/stat/attack/sword-poison2.png";
+  swordPic = "background-image: url('../../assets/images/stat/attack/stat-sword.png')";
+  attackHandlePic = "background-image: url('../../assets/images/stat/attack/sword-handle2.png')";
+  blacksmithPic = "background-image: url('../../assets/images/stat/attack/sword-blacksmith2.png')";
+  poisonPic = "background-image: url('../../assets/images/stat/attack/sword-poison2.png')";
   //shield pics
-  shieldPic = "../../../assets/images/stat/defense/shield.png";
-  shieldHandlePic = "../../../assets/images/stat/defense/shield-handle2.png";
-  barrierPic = "../../../assets/images/stat/defense/shield-barrier2.png";
-  thornPic = "../../../assets/images/stat/defense/shield-thorn2.png";
+  shieldPic = "background-image: url('../../assets/images/stat/defense/shield.png')";
+  shieldHandlePic = "background-image: url('../../assets/images/stat/defense/shield-handle2.png')";
+  barrierPic = "background-image: url('../../assets/images/stat/defense/shield-barrier2.png')";
+  thornPic = "background-image: url('../../assets/images/stat/defense/shield-thorn2.png')";
   //energy pics
   manaPic = "../../../assets/images/misc/mana.png";
   staminaPic = "../../../assets/images/misc/stamina.png";
   shadowPic = "../../../assets/images/misc/shadowPotion.png";
   coinPic = "../../../assets/images/misc/coin.png";
-  //gear pics
-  hand = "../../../assets/images/gear/hand/Weathered_Hand.png";
-  feet = "../../../assets/images/gear/feet/Weathered_Feet.png";
-  torso = "../../../assets/images/gear/torso/Weathered_Torso.png";
-  leg = "../../../assets/images/gear/leg/Weathered_Leg.png";
-  weapon = "../../../assets/images/gear/weapon/Weathered_Sword.png";
-  shield = "../../../assets/images/gear/shield/Weathered_Shield.png";
 
   constructor() { }
 }
