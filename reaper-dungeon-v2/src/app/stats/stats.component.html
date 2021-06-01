@@ -33,20 +33,28 @@
     </div>
 </div>
 
-<div 
-    class="pop-up-info"
-    #popUp>
-    <div class="row no-gutters my-1">
-        <div 
-            class="pop-up-image"
-            #popUpImage></div>
-    </div>
-    <div class="d-flex flex-column">
-        <div class="text-center">{{ gearName }}</div>
-        <div *ngIf="gearAttack.condition" class="d-flex flex-row justify-content-start align-items-center">
-            <div [style]="gearAttack.pic"></div>
-            <div>{{ gearAttack.gearAttackValue }}</div>
+<div class="pop-up-info" #popUp>
+    <div class="d-flex justify-content-center">
+        <div class="d-flex flex-column">
+            <div class="d-flex flex-row align-items-center my-2">
+                <div class="col-1"></div>
+                <div class="col-4 pop-up-image" #popUpImage></div>
+                <div class="col-7">{{ gearName }}</div>
+            </div>
+            <div class="d-flex flex-row align-items-center">
+                <div 
+                    *ngIf="gearAttack.condition" 
+                    class="d-flex flex-row justify-content-start align-items-center">
+                    <div [style]="gearAttack.pic"></div>
+                    <div>{{ gearAttack.gearAttackValue }}</div>
+                </div>
+                <div 
+                    *ngIf="gearAttack.condition" 
+                    class="d-flex flex-row justify-content-center align-items-center">
+                    <div [style]="gearAttack.pic"></div>
+                    <div>{{ gearAttack.gearAttackValue }}</div>
+                </div>
+            </div>
         </div>
-        <div class="text-center"></div>
     </div>
 </div>
