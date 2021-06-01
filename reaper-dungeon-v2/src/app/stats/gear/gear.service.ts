@@ -47,8 +47,8 @@ export class GearService {
       type: "sword",
       attack: 10,
       handle: 2,
-      blacksmith: 0,
-      poison: 0,
+      blacksmith: 1,
+      poison: 1,
       imgUrl: "url('../../assets/images/gear/weapon/Weathered_Sword.png')"
     }
   ]
@@ -71,7 +71,7 @@ export class GearService {
       id: 0,
       name: "Weathered Gloves",
       type: "hand",
-      defense: 5,
+      defense: 10,
       weaponHandle: 2,
       barrier: 0,
       thorn: 0,
@@ -85,6 +85,7 @@ export class GearService {
       name: "Weathered Boots",
       type: "feet",
       defense: 5,
+      shieldHandle: 2,
       barrier: 0,
       thorn: 0,
       imgUrl: "url('../../assets/images/gear/feet/Weathered_Feet.png')"
@@ -97,6 +98,7 @@ export class GearService {
       name: "Weathered Jacket",
       type: "torso",
       defense: 10,
+      weaponHandle: 5,
       barrier: 0,
       thorn: 0,
       imgUrl: "url('../../assets/images/gear/torso/Weathered_Torso.png')"
@@ -109,6 +111,7 @@ export class GearService {
       name: "Wethered Trousers",
       type: "leg",
       defense: 5,
+      shieldHandle: 5,
       barrier: 0,
       thorn: 0,
       imgUrl: "url('../../assets/images/gear/leg/Weathered_Leg.png')"

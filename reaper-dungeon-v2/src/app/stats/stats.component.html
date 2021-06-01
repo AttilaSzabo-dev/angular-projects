@@ -35,13 +35,13 @@
 
 <div class="pop-up-info" #popUp>
     <div class="column">
-        <div class="row no-gutters my-2">
+        <div class="row no-gutters my-2 p-2">
             <div class="col-4 pop-up-image" #popUpImage></div>
-            <div class="col-8 text-wrap text-center">{{ gearName }}</div>
+            <div class="col-8 d-flex align-items-center justify-content-center text-wrap">{{ gearName }}</div>
         </div>
         <div 
             *ngIf="gearAttack.condition" 
-            class="d-flex flex-row align-items-center stat-rows mb-2">
+            class="d-flex flex-row align-items-center mb-2 p-1 stat-rows">
             <div class="col-3 pic" [style]="gearAttack.attackPic"></div>
             <div class="col-3">{{ gearAttack.gearAttackValue }}</div>
             <div class="col-3 pic" [style]="gearAttack.handlePic"></div>
@@ -49,7 +49,7 @@
         </div>
         <div 
             *ngIf="gearAttack.condition" 
-            class="d-flex flex-row align-items-center stat-rows mb-2">
+            class="d-flex flex-row align-items-center mb-2 p-1 stat-rows">
             <div class="col-3 pic" [style]="gearAttack.blacksmithPic"></div>
             <div class="col-3">{{ gearAttack.gearBlacksmithValue }}</div>
             <div class="col-3 pic" [style]="gearAttack.poisonPic"></div>
@@ -57,19 +57,83 @@
         </div>
         <div 
             *ngIf="gearDefense.condition" 
-            class="d-flex flex-row align-items-center stat-rows mb-2">
+            class="d-flex flex-row align-items-center mb-2 p-1 stat-rows">
             <div class="col-3 pic" [style]="gearDefense.defensePic"></div>
             <div class="col-3">{{ gearDefense.gearDefenseValue }}</div>
             <div class="col-3 pic" [style]="gearDefense.handlePic"></div>
-            <div class="col-3">{{ gearDefense.gearDefenseValue }}</div>
+            <div class="col-3">{{ gearDefense.gearHandleValue }}</div>
         </div>
         <div 
             *ngIf="gearDefense.condition" 
-            class="d-flex flex-row align-items-center stat-rows mb-2">
+            class="d-flex flex-row align-items-center mb-2 p-1 stat-rows">
             <div class="col-3 pic" [style]="gearDefense.barrierPic"></div>
             <div class="col-3">{{ gearDefense.gearBarrierValue }}</div>
             <div class="col-3 pic" [style]="gearDefense.thornPic"></div>
             <div class="col-3">{{ gearDefense.gearThornValue }}</div>
+        </div>
+        <div 
+            *ngIf="gearHand.condition" 
+            class="d-flex flex-row align-items-center mb-2 p-1 stat-rows">
+            <div class="col-3 pic" [style]="gearHand.defensePic"></div>
+            <div class="col-3">{{ gearHand.gearDefenseValue }}</div>
+            <div class="col-3 pic" [style]="gearHand.handlePic"></div>
+            <div class="col-3">{{ gearHand.gearHandleValue }}</div>
+        </div>
+        <div 
+            *ngIf="gearHand.condition" 
+            class="d-flex flex-row align-items-center mb-2 p-1 stat-rows">
+            <div class="col-3 pic" [style]="gearHand.barrierPic"></div>
+            <div class="col-3">{{ gearHand.gearBarrierValue }}</div>
+            <div class="col-3 pic" [style]="gearHand.thornPic"></div>
+            <div class="col-3">{{ gearHand.gearThornValue }}</div>
+        </div>
+        <div 
+            *ngIf="gearFeet.condition" 
+            class="d-flex flex-row align-items-center mb-2 p-1 stat-rows">
+            <div class="col-3 pic" [style]="gearFeet.defensePic"></div>
+            <div class="col-3">{{ gearFeet.gearDefenseValue }}</div>
+            <div class="col-3 pic" [style]="gearFeet.handlePic"></div>
+            <div class="col-3">{{ gearFeet.gearHandleValue }}</div>
+        </div>
+        <div 
+            *ngIf="gearFeet.condition" 
+            class="d-flex flex-row align-items-center mb-2 p-1 stat-rows">
+            <div class="col-3 pic" [style]="gearFeet.barrierPic"></div>
+            <div class="col-3">{{ gearFeet.gearBarrierValue }}</div>
+            <div class="col-3 pic" [style]="gearFeet.thornPic"></div>
+            <div class="col-3">{{ gearFeet.gearThornValue }}</div>
+        </div>
+        <div 
+            *ngIf="gearTorso.condition" 
+            class="d-flex flex-row align-items-center mb-2 p-1 stat-rows">
+            <div class="col-3 pic" [style]="gearTorso.defensePic"></div>
+            <div class="col-3">{{ gearTorso.gearDefenseValue }}</div>
+            <div class="col-3 pic" [style]="gearTorso.handlePic"></div>
+            <div class="col-3">{{ gearTorso.gearHandleValue }}</div>
+        </div>
+        <div 
+            *ngIf="gearTorso.condition" 
+            class="d-flex flex-row align-items-center mb-2 p-1 stat-rows">
+            <div class="col-3 pic" [style]="gearTorso.barrierPic"></div>
+            <div class="col-3">{{ gearTorso.gearBarrierValue }}</div>
+            <div class="col-3 pic" [style]="gearTorso.thornPic"></div>
+            <div class="col-3">{{ gearTorso.gearThornValue }}</div>
+        </div>
+        <div 
+            *ngIf="gearLeg.condition" 
+            class="d-flex flex-row align-items-center mb-2 p-1 stat-rows">
+            <div class="col-3 pic" [style]="gearLeg.defensePic"></div>
+            <div class="col-3">{{ gearLeg.gearDefenseValue }}</div>
+            <div class="col-3 pic" [style]="gearLeg.handlePic"></div>
+            <div class="col-3">{{ gearLeg.gearHandleValue }}</div>
+        </div>
+        <div 
+            *ngIf="gearLeg.condition" 
+            class="d-flex flex-row align-items-center mb-2 p-1 stat-rows">
+            <div class="col-3 pic" [style]="gearLeg.barrierPic"></div>
+            <div class="col-3">{{ gearLeg.gearBarrierValue }}</div>
+            <div class="col-3 pic" [style]="gearLeg.thornPic"></div>
+            <div class="col-3">{{ gearLeg.gearThornValue }}</div>
         </div>
     </div>
 </div>

@@ -21,7 +21,7 @@ export class StatsComponent implements OnInit {
     attackPic: this.statsService.swordPic,
     gearHandleValue: 0,
     handlePic: this.statsService.attackHandlePic,
-    gearBlacksmithValue: false,
+    gearBlacksmithValue: 0,
     blacksmithPic: this.statsService.blacksmithPic,
     gearPoisonValue: 0,
     poisonPic: this.statsService.poisonPic
@@ -37,6 +37,50 @@ export class StatsComponent implements OnInit {
     gearThornValue: 0,
     thornPic: this.statsService.thornPic
   };
+  gearHand = {
+    condition: false,
+    gearDefenseValue: 0,
+    defensePic: this.statsService.shieldPic,
+    gearHandleValue: 0,
+    handlePic: this.statsService.attackHandlePic,
+    gearBarrierValue: 0,
+    barrierPic: this.statsService.barrierPic,
+    gearThornValue: 0,
+    thornPic: this.statsService.thornPic
+  };
+  gearFeet = {
+    condition: false,
+    gearDefenseValue: 0,
+    defensePic: this.statsService.shieldPic,
+    gearHandleValue: 0,
+    handlePic: this.statsService.shieldHandlePic,
+    gearBarrierValue: 0,
+    barrierPic: this.statsService.barrierPic,
+    gearThornValue: 0,
+    thornPic: this.statsService.thornPic
+  };
+  gearTorso = {
+    condition: false,
+    gearDefenseValue: 0,
+    defensePic: this.statsService.shieldPic,
+    gearHandleValue: 0,
+    handlePic: this.statsService.attackHandlePic,
+    gearBarrierValue: 0,
+    barrierPic: this.statsService.barrierPic,
+    gearThornValue: 0,
+    thornPic: this.statsService.thornPic
+  }
+  gearLeg = {
+    condition: false,
+    gearDefenseValue: 0,
+    defensePic: this.statsService.shieldPic,
+    gearHandleValue: 0,
+    handlePic: this.statsService.shieldHandlePic,
+    gearBarrierValue: 0,
+    barrierPic: this.statsService.barrierPic,
+    gearThornValue: 0,
+    thornPic: this.statsService.thornPic
+  }
 
   ngOnInit() {
     this.statsService.detectGearHover.subscribe((data) => {
@@ -62,6 +106,34 @@ export class StatsComponent implements OnInit {
         this.gearDefense.gearBarrierValue = data.barrier;
         this.gearDefense.gearThornValue = data.thorn;
       }else this.gearDefense.condition = false;
+      if (data.type === "hand") {
+        this.gearHand.condition = true;
+        this.gearHand.gearDefenseValue = data.defense;
+        this.gearHand.gearHandleValue = data.weaponHandle;
+        this.gearHand.gearBarrierValue = data.barrier;
+        this.gearHand.gearThornValue = data.thorn;
+      }else this.gearHand.condition = false;
+      if (data.type === "feet") {
+        this.gearFeet.condition = true;
+        this.gearFeet.gearDefenseValue = data.defense;
+        this.gearFeet.gearHandleValue = data.shieldHandle;
+        this.gearFeet.gearBarrierValue = data.barrier;
+        this.gearFeet.gearThornValue = data.thorn;
+      }else this.gearFeet.condition = false;
+      if (data.type === "torso") {
+        this.gearTorso.condition = true;
+        this.gearTorso.gearDefenseValue = data.defense;
+        this.gearTorso.gearHandleValue = data.weaponHandle;
+        this.gearTorso.gearBarrierValue = data.barrier;
+        this.gearTorso.gearThornValue = data.thorn;
+      }else this.gearTorso.condition = false;
+      if (data.type === "leg") {
+        this.gearLeg.condition = true;
+        this.gearLeg.gearDefenseValue = data.defense;
+        this.gearLeg.gearHandleValue = data.shieldHandle;
+        this.gearLeg.gearBarrierValue = data.barrier;
+        this.gearLeg.gearThornValue = data.thorn;
+      }else this.gearLeg.condition = false;
     });
   }
 }
