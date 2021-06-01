@@ -47,8 +47,8 @@ export class GearService {
       type: "sword",
       attack: 10,
       handle: 2,
-      enhanceable: false,
-      poisonDmg: 0,
+      blacksmith: 0,
+      poison: 0,
       imgUrl: "url('../../assets/images/gear/weapon/Weathered_Sword.png')"
     }
   ]

@@ -18,12 +18,24 @@ export class StatsComponent implements OnInit {
   gearAttack = {
     condition: false,
     gearAttackValue: 0,
-    pic: this.statsService.swordPic
-  };
-  gearAttackHandle = {
-    condition: false,
+    attackPic: this.statsService.swordPic,
     gearHandleValue: 0,
-    pic: this.statsService.attackHandlePic
+    handlePic: this.statsService.attackHandlePic,
+    gearBlacksmithValue: false,
+    blacksmithPic: this.statsService.blacksmithPic,
+    gearPoisonValue: 0,
+    poisonPic: this.statsService.poisonPic
+  };
+  gearDefense = {
+    condition: false,
+    gearDefenseValue: 0,
+    defensePic: this.statsService.shieldPic,
+    gearHandleValue: 0,
+    handlePic: this.statsService.shieldHandlePic,
+    gearBarrierValue: 0,
+    barrierPic: this.statsService.barrierPic,
+    gearThornValue: 0,
+    thornPic: this.statsService.thornPic
   };
 
   ngOnInit() {
@@ -36,14 +48,20 @@ export class StatsComponent implements OnInit {
     this.gearService.showGearStats.subscribe(data => {
       this.renderer.setStyle(this.popUpImage.nativeElement, "background-image", data.imgUrl);
       this.gearName = data.name;
-      if (data.hasOwnProperty("attack")) {
+      if (data.type === "sword") {
         this.gearAttack.condition = true;
         this.gearAttack.gearAttackValue = data.attack;
+        this.gearAttack.gearHandleValue = data.handle;
+        this.gearAttack.gearBlacksmithValue = data.blacksmith ;
+        this.gearAttack.gearPoisonValue = data.poison ;
       }else this.gearAttack.condition = false;
-      if (data.hasOwnProperty("handle")) {
-        this.gearAttackHandle.condition = true;
-        this.gearAttackHandle.gearHandleValue = data.handle;
-      }else this.gearAttackHandle.condition = false;
+      if (data.type === "shield") {
+        this.gearDefense.condition = true;
+        this.gearDefense.gearDefenseValue = data.defense;
+        this.gearDefense.gearHandleValue = data.handle;
+        this.gearDefense.gearBarrierValue = data.barrier;
+        this.gearDefense.gearThornValue = data.thorn;
+      }else this.gearDefense.condition = false;
     });
   }
 }
