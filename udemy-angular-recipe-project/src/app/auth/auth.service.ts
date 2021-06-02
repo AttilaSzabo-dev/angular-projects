@@ -3,6 +3,8 @@ import { Injectable } from "@angular/core";
 import { catchError } from "rxjs/operators";
 import { throwError } from "rxjs";
 
+import { Enviroment } from "src/assets/enviroment";
+
 interface AuthResponseData {
     kind: string;
     idToken: string;
@@ -14,11 +16,11 @@ interface AuthResponseData {
 
 @Injectable({providedIn: "root"})
 export class AuthService {
-    constructor(private http: HttpClient) {}
+    constructor(private http: HttpClient, private enviroment: Enviroment) {}
 
     signup(email: string, password: string) {
         return this.http.post<AuthResponseData>(
-            "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDHZz0lQ2gSl-lLmezd_9wcgZW9eytHrMs", 
+            "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=" + this.enviroment.apiKey, 
             {
                 email: email,
                 password: password,
