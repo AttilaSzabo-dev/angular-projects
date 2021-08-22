@@ -1,0 +1,71 @@
+<div class="container py-3">
+    <div class="row justify-content-center">
+        <div class="col-12">
+            <form (ngSubmit)="onSubmit()" #f="ngForm">
+                <div 
+                    id="ingredient-data" 
+                    ngModelGroup="ingredientData"
+                    #ingredientData="ngModelGroup">
+                    <div class="form-group">
+                        <label for="ingredientName">Alapanyag neve:</label>
+                        <input 
+                            type="text" 
+                            id="ingredientName" 
+                            class="form-control"
+                            ngModel
+                            name="ingredientName"
+                            required>
+                    </div>
+                    <div class="text-center">
+                        <div class="form-check form-check-inline my-2 mb-3" *ngFor="let amountType of amountTypes">
+                            <input class="form-check-input" type="radio" name="amountType" [id]="amountType" 
+                            ngModel
+                            [value]="amountType"
+                            required>
+                            <label class="form-check-label" [for]="amountType">
+                                {{ amountType }}
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="ingredientAmount">Mennyiség:</label>
+                        <input 
+                            type="number" 
+                            id="ingredientAmount" 
+                            class="form-control"
+                            ngModel
+                            name="ingredientAmount"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="calorieAmount">Kalória mennyiség:</label>
+                        <input 
+                            type="number" 
+                            id="calorieAmount" 
+                            class="form-control"
+                            ngModel
+                            name="calorieAmount"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="picture">Kép:</label>
+                        <input 
+                            type="text" 
+                            id="picture" 
+                            class="form-control"
+                            aria-describedby="helpBlock"
+                            ngModel
+                            name="picture">
+                        <small id="helpBlock" class="form-text">
+                            (Opcionális)
+                        </small>
+                    </div>
+                </div>
+                <button 
+                    class="btn btn-success" 
+                    type="submit"
+                    [disabled]="!f.valid">Mentés</button>
+            </form>
+        </div>
+    </div>
+</div>
