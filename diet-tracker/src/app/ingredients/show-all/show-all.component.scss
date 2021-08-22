@@ -14,16 +14,21 @@
             border: 2px solid transparent;
             border-radius: 10px;
             font-size: .6rem;
-            -webkit-box-shadow: 5px 5px 15px 5px #000000; 
-            box-shadow: 5px 5px 15px 5px #000000;
+            -webkit-box-shadow: 4px 5px 15px 5px #000000; 
+            box-shadow: 4px 5px 15px 5px #000000;
             transition: all .3s;
 
             &:hover {
                 border-color: #96c93d;
                 transform: translateY(3px);
-                -webkit-box-shadow: 5px 5px 15px 1px #000000; 
-                box-shadow: 5px 5px 15px 1px #000000;
+                -webkit-box-shadow: 4px 5px 15px 1px #000000; 
+                box-shadow: 4px 5px 15px 1px #000000;
                 cursor: pointer;
+            }
+
+            &:active {
+                border-color: red;
+                transition: border-color .1s;
             }
 
             div {
