@@ -1,7 +1,9 @@
+@import "../../assets/variables.scss";
+
 .navbar {
-    background-color: #96c93d;
+    background-image: $header-background;
 
     .navbar-brand {
-        color: white;
+        color: $header-brand;
     }
 }

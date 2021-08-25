@@ -1,16 +1,13 @@
 <div class="container py-3">
     <div class="row justify-content-center">
         <div class="col-12">
-            <form (submit)="onAddIngredient(postForm)" #postForm="ngForm">
-                
+            <form [formGroup]="ingredientForm" (ngSubmit)="onSubmit()">
                     <div class="form-group">
-                        <label for="ingredientName">Alapanyag neve:</label>
+                        <label for="name">Alapanyag neve:</label>
                         <input 
                             type="text"  
                             class="form-control"
-                            ngModel
-                            name="ingredientName"
-                            required>
+                            formControlName="name">
                     </div>
                     <!-- <div class="text-center">
                         <label class="d-block">Mennyiség típusa:</label>
@@ -27,26 +24,23 @@
                         <hr>
                     </div> -->
                     <div class="form-group">
-                        <label for="calorieAmount">Kalória mennyiség:</label>
+                        <label for="calAmount">Kalória mennyiség:</label>
                         <input 
                             type="number"  
                             class="form-control"
                             aria-describedby="calorieHelpBlock"
-                            ngModel
-                            name="calorieAmount"
-                            required>
+                            formControlName="calAmount">
                         <small id="calorieHelpBlock" class="form-text helper">
                             100 g/ml
                         </small>
                     </div>
                     <div class="form-group">
-                        <label for="picture">Kép:</label>
+                        <label for="pictureUrl">Kép:</label>
                         <input 
                             type="text" 
                             class="form-control"
                             aria-describedby="pictureHelpBlock"
-                            ngModel
-                            name="picture">
+                            formControlName="pictureUrl">
                         <small id="pictureHelpBlock" class="form-text">
                             (Opcionális)
                         </small>
@@ -54,8 +48,13 @@
                 <button 
                     class="btn btn-success" 
                     type="submit"
-                    [disabled]="!postForm.valid">Mentés</button>
+                    [disabled]="!ingredientForm.valid">Mentés</button>
+                <button 
+                    class="btn btn-danger ml-2" 
+                    type="button"
+                    (click)="onDelete()">Törlés</button>
             </form>
         </div>
     </div>
 </div>
+

@@ -1,5 +1,7 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
+
+import { IngredientService } from '../ingredients.service';
 
 @Component({
   selector: 'app-add-new',
@@ -7,26 +9,24 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./add-new.component.scss']
 })
 export class AddNewComponent {
-  @ViewChild("f") signupForm: NgForm;
+  //amountTypes = ["g", "ml"];
 
-  amountTypes = ["Darab", "Súly(g)"];
-  ingredient = {
-    name: "",
-    amountType: "",
-    amount: "",
-    calorieAmount: ""
-  };
+  constructor(public ingredientService: IngredientService) {}
 
-  onSubmit() {
-    this.ingredient.name = this.signupForm.value.ingredientData.ingredientName;
-    this.ingredient.amountType = this.signupForm.value.ingredientData.amountType;
-    this.ingredient.amount = this.signupForm.value.ingredientData.ingredientAmount;
-    this.ingredient.calorieAmount = this.signupForm.value.ingredientData.calorieAmount;
+  onAddIngredient(form: NgForm) {
+    if (form.invalid) {
+      return;
+    }
 
-    console.log(this.ingredient);
-    
+    const name = form.value.ingredientName;
+    const calorie = form.value.calorieAmount;
+    const pictureUrl = form.value.picture;
 
-    this.signupForm.reset();
+    this.ingredientService.addIngredient(name, calorie, pictureUrl);
+
+    form.resetForm();
   }
+
+  
 
 }

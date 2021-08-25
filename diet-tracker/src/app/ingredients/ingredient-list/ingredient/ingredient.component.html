@@ -1,0 +1,17 @@
+<div class="col-12 col-sm-6 col-lg-4 px-1 mb-3 ingredientElem" (click)="onEditIngredient()">
+    <div class="d-flex flex-row justify-content-around text-center wrapper py-1">
+        <div class="picture">
+            <img src="{{ ingredient.pictureUrl }}" alt="" *ngIf="ingredient.pictureUrl; else noPic">
+            <ng-template #noPic>
+                <img src="https://st4.depositphotos.com/14953852/24787/v/600/depositphotos_247872612-stock-illustration-no-image-available-icon-vector.jpg" alt="">
+            </ng-template>
+        </div>
+        <div class="name">
+            <p>{{ ingredient.name }}</p>
+        </div>
+        <div class="calAmount">
+            <p>Kalória:</p>
+            <p>{{ ingredient.calAmount }} kCal</p>
+        </div>
+    </div>
+</div>

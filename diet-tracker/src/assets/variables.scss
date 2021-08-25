@@ -1,0 +1,33 @@
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins/breakpoints";
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&family=Roboto:wght@300&display=swap');
+
+//colors
+$peach: #fdb777;
+$green: #96c93d;
+$green-2: #28d1ab;
+$gradient-green: radial-gradient( circle farthest-corner at 10% 20%, #28d1ab 0%, #5dfe60 90% );
+$white: #fff;
+$red: #ff6666;
+
+
+// main
+$main-background: linear-gradient(to right, #00b4db, #0083b0);
+
+//header
+$header-background: $gradient-green;
+$header-brand: $white;
+
+//containers
+$container-background: $green-2;
+$container-border: $white;
+
+//add-new component
+$container-form-focus: $green;
+
+//show-all component
+$container-ingredient-wrapper: $white;
+$container-hover-border: $green;
+$container-active-border: $red;
