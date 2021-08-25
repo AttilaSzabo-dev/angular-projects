@@ -18,11 +18,11 @@ export class AddNewComponent {
       return;
     }
 
-    const name = form.value.ingredientName;
-    const calorie = form.value.calorieAmount;
-    const pictureUrl = form.value.picture;
+    const name = form.value.name;
+    const calAmount = form.value.calAmount;
+    const pictureUrl = form.value.pictureUrl;
 
-    this.ingredientService.addIngredient(name, calorie, pictureUrl);
+    this.ingredientService.addIngredient(name, calAmount, pictureUrl);
 
     form.resetForm();
   }
