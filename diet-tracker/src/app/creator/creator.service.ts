@@ -1,10 +1,10 @@
 import { Injectable } from "@angular/core";
 import { Subject } from "rxjs";
 
-import { Ingredient } from "./ingredient-list/ingredient/ingredient.model";
+import { Ingredient } from "./ingredients/ingredient-list/ingredient/ingredient.model";
 
 @Injectable({providedIn: "root"})
-export class IngredientService {
+export class CreatorService {
     private ingredients: Ingredient[] = [];
     private ingredientsUpdated = new Subject<Ingredient[]>();
 

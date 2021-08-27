@@ -1,18 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { IngredientsComponent } from './ingredients/ingredients.component';
-import { AddNewComponent } from './ingredients/add-new/add-new.component';
-import { EditComponent } from './ingredients/edit/edit.component';
-import { RecipesComponent } from './recipes/recipes.component';
+import { CreatorComponent } from './creator/creator.component';
+import { AddIngredientComponent } from './creator/ingredients/add-ingredient/add-ingredient.component';
+import { EditIngredientComponent } from './creator/ingredients/edit-ingredient/edit-ingredient.component';
 
 const routes: Routes = [
-  {path: "", redirectTo: "/ingredients", pathMatch: "full"},
-  {path: "ingredients", component: IngredientsComponent, children: [
-    {path: "", component: AddNewComponent},
-    {path: ":id/edit", component: EditComponent}
-  ] },
-  {path: "recipes", component: RecipesComponent}
+  {path: "", redirectTo: "/creator", pathMatch: "full"},
+  {path: "creator", component: CreatorComponent, children: [
+    {path: "", component: AddIngredientComponent},
+    {path: ":id/edit", component: EditIngredientComponent}
+  ] }
 ];
 
 @NgModule({

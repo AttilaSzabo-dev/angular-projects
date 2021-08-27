@@ -5,22 +5,22 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { IngredientsComponent } from './ingredients/ingredients.component';
-import { RecipesComponent } from './recipes/recipes.component';
-import { AddNewComponent } from './ingredients/add-new/add-new.component';
-import { IngredientListComponent } from './ingredients/ingredient-list/ingredient-list.component';
-import { EditComponent } from './ingredients/edit/edit.component';
-import { IngredientComponent } from './ingredients/ingredient-list/ingredient/ingredient.component';
+import { CreatorComponent } from './creator/creator.component';
+import { RecipesComponent } from './creator/recipes/recipes.component';
+import { AddIngredientComponent } from './creator/ingredients/add-ingredient/add-ingredient.component';
+import { IngredientListComponent } from './creator/ingredients/ingredient-list/ingredient-list.component';
+import { EditIngredientComponent } from './creator/ingredients/edit-ingredient/edit-ingredient.component';
+import { IngredientComponent } from './creator/ingredients/ingredient-list/ingredient/ingredient.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    IngredientsComponent,
+    CreatorComponent,
     RecipesComponent,
-    AddNewComponent,
+    AddIngredientComponent,
     IngredientListComponent,
-    EditComponent,
+    EditIngredientComponent,
     IngredientComponent
   ],
   imports: [

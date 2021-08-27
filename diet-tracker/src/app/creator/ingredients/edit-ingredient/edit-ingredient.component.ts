@@ -2,19 +2,19 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 
-import { IngredientService } from '../ingredients.service';
+import { CreatorService } from '../../creator.service';
 
 @Component({
-  selector: 'app-edit',
-  templateUrl: './edit.component.html',
-  styleUrls: ['./edit.component.scss']
+  selector: 'app-edit-ingredient',
+  templateUrl: './edit-ingredient.component.html',
+  styleUrls: ['./edit-ingredient.component.scss']
 })
 
-export class EditComponent implements OnInit {
+export class EditIngredientComponent implements OnInit {
   id: number;
   ingredientForm: FormGroup;
 
-  constructor(public ingredientService: IngredientService, private route: ActivatedRoute, private router: Router) { }
+  constructor(public creatorService: CreatorService, private route: ActivatedRoute, private router: Router) { }
   
   ngOnInit() {
     this.route.params.subscribe(
@@ -26,7 +26,7 @@ export class EditComponent implements OnInit {
   }
 
   private initForm() {
-    const ingredient = this.ingredientService.getIngredient(this.id);
+    const ingredient = this.creatorService.getIngredient(this.id);
     this.ingredientForm = new FormGroup({
       name: new FormControl(ingredient.name, Validators.required),
       calAmount: new FormControl(ingredient.calAmount, Validators.required),
@@ -35,12 +35,12 @@ export class EditComponent implements OnInit {
   }
 
   onSubmit() {
-    this.ingredientService.updateIngredient(this.id, this.ingredientForm.value);
+    this.creatorService.updateIngredient(this.id, this.ingredientForm.value);
     this.router.navigate([""], {relativeTo: this.route});
   }
 
   onDelete() {
-    this.ingredientService.deleteIngredient(this.id);
+    this.creatorService.deleteIngredient(this.id);
     this.router.navigate([""], {relativeTo: this.route});
   }
 }

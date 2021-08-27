@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 
 import { Ingredient } from './ingredient/ingredient.model';
-import { IngredientService } from '../ingredients.service';
+import { CreatorService } from '../../creator.service';
 
 @Component({
   selector: 'app-ingredient-list',
@@ -14,11 +14,11 @@ export class IngredientListComponent implements OnInit, OnDestroy {
   ingredients: Ingredient[] = [];
   private ingredientsSub: Subscription;
 
-  constructor(public ingredientService: IngredientService) {}
+  constructor(public creatorService: CreatorService) {}
 
   ngOnInit() {
-    this.ingredients = this.ingredientService.getIngredients();
-    this.ingredientsSub = this.ingredientService.getIngredientUpdateListener() 
+    this.ingredients = this.creatorService.getIngredients();
+    this.ingredientsSub = this.creatorService.getIngredientUpdateListener() 
       .subscribe((ingredients: Ingredient[]) => {
         this.ingredients = ingredients;
       });

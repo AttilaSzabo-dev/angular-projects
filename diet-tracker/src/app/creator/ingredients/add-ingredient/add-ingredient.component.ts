@@ -1,17 +1,17 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
-import { IngredientService } from '../ingredients.service';
+import { CreatorService } from '../../creator.service';
 
 @Component({
-  selector: 'app-add-new',
-  templateUrl: './add-new.component.html',
-  styleUrls: ['./add-new.component.scss']
+  selector: 'app-add-ingredient',
+  templateUrl: './add-ingredient.component.html',
+  styleUrls: ['./add-ingredient.component.scss']
 })
-export class AddNewComponent {
+export class AddIngredientComponent {
   //amountTypes = ["g", "ml"];
 
-  constructor(public ingredientService: IngredientService) {}
+  constructor(public creatorService: CreatorService) {}
 
   onAddIngredient(form: NgForm) {
     if (form.invalid) {
@@ -22,7 +22,7 @@ export class AddNewComponent {
     const calAmount = form.value.calAmount;
     const pictureUrl = form.value.pictureUrl;
 
-    this.ingredientService.addIngredient(name, calAmount, pictureUrl);
+    this.creatorService.addIngredient(name, calAmount, pictureUrl);
 
     form.resetForm();
   }
