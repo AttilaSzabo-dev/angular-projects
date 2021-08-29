@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { CreatorService } from '../../creator.service';
 
@@ -11,7 +12,7 @@ import { CreatorService } from '../../creator.service';
 export class AddIngredientComponent {
   //amountTypes = ["g", "ml"];
 
-  constructor(public creatorService: CreatorService) {}
+  constructor(public creatorService: CreatorService, private router: Router, private route: ActivatedRoute) {}
 
   onAddIngredient(form: NgForm) {
     if (form.invalid) {
@@ -25,6 +26,7 @@ export class AddIngredientComponent {
     this.creatorService.addIngredient(name, calAmount, pictureUrl);
 
     form.resetForm();
+    this.router.navigate([""], {relativeTo: this.route});
   }
 
   

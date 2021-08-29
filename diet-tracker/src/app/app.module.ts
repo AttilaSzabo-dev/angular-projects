@@ -12,6 +12,8 @@ import { AddIngredientComponent } from './creator/ingredients/add-ingredient/add
 import { IngredientListComponent } from './creator/ingredients/ingredient-list/ingredient-list.component';
 import { EditIngredientComponent } from './creator/ingredients/edit-ingredient/edit-ingredient.component';
 import { IngredientComponent } from './creator/ingredients/ingredient-list/ingredient/ingredient.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { IngredientComponent } from './creator/ingredients/ingredient-list/ingre
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

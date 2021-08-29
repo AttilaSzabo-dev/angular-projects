@@ -1,4 +1,4 @@
-<div class="col-12 col-sm-6 col-lg-4 px-1 mb-3 ingredientElem" (click)="onEditIngredient()">
+<div class="col-12 col-sm-6 px-1 mb-3 ingredientElem" (click)="onEditIngredient()">
     <div class="d-flex flex-row justify-content-around text-center wrapper py-1">
         <div class="picture">
             <img src="{{ ingredient.pictureUrl }}" alt="" *ngIf="ingredient.pictureUrl; else noPic">

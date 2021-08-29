@@ -10,6 +10,7 @@ const routes: Routes = [
   {path: "", redirectTo: "/creator", pathMatch: "full"},
   {path: "creator", component: CreatorComponent, children: [
     {path: "", component: IngredientListComponent},
+    {path: "add", component: AddIngredientComponent},
     {path: ":id/edit", component: EditIngredientComponent}
   ] }
 ];
