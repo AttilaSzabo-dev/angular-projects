@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+
+import { CreatorService } from '../../creator.service';
 
 @Component({
   selector: 'app-add-recipe',
@@ -6,10 +9,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-recipe.component.scss']
 })
 export class AddRecipeComponent implements OnInit {
+  recipeForm: FormGroup;
 
-  constructor() { }
+  constructor(private creatorService: CreatorService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.initForm();
+  }
+
+  private initForm() {
+    this.recipeForm = new FormGroup({
+      name: new FormControl(),
+      pictureUrl: new FormControl()
+    });
+  }
+
+  onSubmit() {
+
   }
 
 }

@@ -1,3 +1,35 @@
-<div class="container px-2">
+<div class="container p-0">
+    <div class="row justify-content-center">
+        <div class="col-12">
+            <mat-card>
+                <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Recept neve:</mat-label>
+                        <input type="text"
+                        formControlName="name" 
+                        required
+                        matInput>
+                        <mat-error>Nem adtál meg nevet!</mat-error>
+                    </mat-form-field>
 
+                    <mat-form-field appearance="outline">
+                        <mat-label>Kép:</mat-label>
+                        <input type="text"
+                        formControlName="pictureUrl"
+                        matInput>
+                        <mat-hint>(Opcionális)</mat-hint>
+                    </mat-form-field>
+                    
+                <!-- <button 
+                    class="btn btn-success" 
+                    type="submit"
+                    [disabled]="!ingredientForm.valid">Mentés</button>
+                <button 
+                    class="btn btn-danger ml-2" 
+                    type="button"
+                    (click)="onDelete()">Törlés</button> -->
+                </form>
+            </mat-card>
+        </div>
+    </div>
 </div>

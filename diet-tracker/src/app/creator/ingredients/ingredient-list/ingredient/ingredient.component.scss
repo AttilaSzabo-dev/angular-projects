@@ -11,22 +11,15 @@
         height: 55px;
         background-color: $container-ingredient-wrapper;
         border: 2px solid transparent;
-        border-radius: 10px;
+        border-radius: .2rem;
         -webkit-box-shadow: 4px 5px 15px 5px #000000; 
         box-shadow: 4px 5px 15px 5px #000000;
         transition: all .3s;
 
         &:hover {
             border-color: $container-hover-border;
-            transform: translateY(3px);
             -webkit-box-shadow: 4px 5px 15px 1px #000000; 
             box-shadow: 4px 5px 15px 1px #000000;
-            cursor: pointer;
-        }
-
-        &:active {
-            border-color: $container-active-border;
-            transition: border-color .1s;
         }
 
         p {
@@ -34,8 +27,8 @@
         }
 
         .picture {
-            width: 30%;
-            padding-left: 4%;
+            width: 27%;
+            padding-left: 3%;
 
             img {
                 width: 100%;
@@ -49,7 +42,7 @@
         }
 
         .name {
-            width: 40%;
+            width: 30%;
             
             p {
                 font-size: .8rem;
@@ -57,13 +50,33 @@
         }
 
         .calAmount {
-            width: 30%;
+            width: 28%;
             
             p {
-                font-size: .6rem;
+                font-size: .75rem;
 
                 &:first-child {
                     font-weight: bold;
+                    font-size: .6rem;
+                }
+            }
+        }
+
+        .icons {
+            width: 15%;
+
+            button {
+                height: 50%;
+                padding: .05rem .5rem;
+
+                &:active {
+                    transform: translateY(1px);
+                    transition: all .1s;
+                }
+
+                &:focus {
+                    outline: unset;
+                    box-shadow: unset;
                 }
             }
         }
