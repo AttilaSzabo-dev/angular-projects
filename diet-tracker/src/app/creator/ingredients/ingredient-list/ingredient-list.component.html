@@ -1,6 +1,11 @@
 <div class="container py-3 px-2">
     <div class="row no-gutters justify-content-around">
-        <button type="button" class="btn btn-success col-12 mb-3" routerLink="add">Hozzáadás</button>
+        <button 
+            type="button" 
+            class="col-12 mb-3" 
+            routerLink="add"
+            mat-raised-button 
+            color="primary">Hozzáadás</button>
         <app-ingredient 
             *ngFor="let ingredient of ingredients; let i = index"
             [ingredient]="ingredient" 

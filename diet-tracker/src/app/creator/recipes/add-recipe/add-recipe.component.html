@@ -1,35 +1,42 @@
-<div class="container p-0">
+<div class="container py-3">
     <div class="row justify-content-center">
         <div class="col-12">
-            <mat-card>
-                <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
-                    <mat-form-field appearance="outline">
-                        <mat-label>Recept neve:</mat-label>
-                        <input type="text"
-                        formControlName="name" 
-                        required
-                        matInput>
-                        <mat-error>Nem adtál meg nevet!</mat-error>
-                    </mat-form-field>
+            <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
+                <mat-form-field appearance="outline">
+                    <mat-label>Recept neve:</mat-label>
+                    <input type="text"
+                    formControlName="name" 
+                    required
+                    matInput>
+                    <mat-error>Nem adtál meg nevet!</mat-error>
+                </mat-form-field>
 
-                    <mat-form-field appearance="outline">
-                        <mat-label>Kép:</mat-label>
-                        <input type="text"
-                        formControlName="pictureUrl"
-                        matInput>
-                        <mat-hint>(Opcionális)</mat-hint>
-                    </mat-form-field>
-                    
-                <!-- <button 
-                    class="btn btn-success" 
-                    type="submit"
-                    [disabled]="!ingredientForm.valid">Mentés</button>
-                <button 
-                    class="btn btn-danger ml-2" 
-                    type="button"
-                    (click)="onDelete()">Törlés</button> -->
-                </form>
-            </mat-card>
+                <mat-form-field appearance="outline">
+                    <mat-label>Kép:</mat-label>
+                    <input type="text"
+                    formControlName="pictureUrl"
+                    matInput>
+                    <mat-hint>(Opcionális)</mat-hint>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" *ngFor="let ingredient of recipeIngredients; let i = index">
+                    <mat-label>{{ ingredient.calAmount }}</mat-label>
+                    <input type="text"
+                    formControlName="pictureUrl"
+                    matInput>
+                </mat-form-field>
+
+                <!-- TODO: átalakítani a formot template driven-re és string interpolationnal vagy bindingal adni az adatokat -->
+                
+            <!-- <button 
+                class="btn btn-success" 
+                type="submit"
+                [disabled]="!ingredientForm.valid">Mentés</button>
+            <button 
+                class="btn btn-danger ml-2" 
+                type="button"
+                (click)="onDelete()">Törlés</button> -->
+            </form>
         </div>
     </div>
 </div>

@@ -42,6 +42,9 @@
         }
 
         .name {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
             width: 30%;
             
             p {
@@ -50,6 +53,9 @@
         }
 
         .calAmount {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
             width: 28%;
             
             p {
@@ -65,26 +71,25 @@
         .icons {
             width: 15%;
 
-            button {
-                height: 50%;
-                padding: .05rem .5rem;
+            .mat-raised-button {
+                min-width: unset;
+                width: 70%;
+                height: 47%;
+                line-height: unset;
+                padding-top: 1px;
 
-                &:active {
-                    transform: translateY(1px);
-                    transition: all .1s;
+                &.edit {
+                    .material-icons {
+                        font-size: 19px;
+                    }
                 }
 
-                &:focus {
-                    outline: unset;
-                    box-shadow: unset;
-                }
+                &.add {
+                    .material-icons {
+                        font-size: 17px;
+                    }
+                }  
             }
-        }
-
-        div {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
         }
     }
 }

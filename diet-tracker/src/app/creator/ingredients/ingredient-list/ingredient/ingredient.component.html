@@ -16,13 +16,18 @@
         <div class="icons">
             <button 
                 type="button" 
-                class="btn btn-sm btn-warning mx-auto mb-1"
-                (click)="onEditIngredient()">
-                    <i class="bi-gear-fill"></i></button>
+                class="d-flex justify-content-center mx-auto mb-1 edit"
+                (click)="onEditIngredient()"
+                mat-raised-button 
+                color="accent">
+                    <mat-icon aria-hidden="false" aria-label="icon">settings</mat-icon></button>
             <button 
                 type="button" 
-                class="btn btn-sm btn-success mx-auto">
-                    <i class="bi-plus-circle"></i></button>
+                class="d-flex justify-content-center mx-auto add"
+                (click)="onAddIngredientToRecipe()"
+                mat-raised-button 
+                color="primary">
+                    <mat-icon aria-hidden="false" aria-label="icon">check_circle</mat-icon></button>
         </div>
     </div>
 </div>

@@ -14,7 +14,8 @@ import { EditIngredientComponent } from './creator/ingredients/edit-ingredient/e
 import { IngredientComponent } from './creator/ingredients/ingredient-list/ingredient/ingredient.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule } from '@angular/material/input';
-import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { MatCardModule } from '@angular/material/card';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MatInputModule,
-    MatCardModule
+    MatButtonModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

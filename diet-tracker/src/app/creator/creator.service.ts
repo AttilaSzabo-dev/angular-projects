@@ -6,7 +6,9 @@ import { Ingredient } from "./ingredients/ingredient-list/ingredient/ingredient.
 @Injectable({providedIn: "root"})
 export class CreatorService {
     private ingredients: Ingredient[] = [];
+    private recipeIngredients: Ingredient[] = [];
     private ingredientsUpdated = new Subject<Ingredient[]>();
+    private recipeIngredientsUpdated = new Subject<Ingredient[]>();
 
     constructor() {};
 
@@ -14,14 +16,29 @@ export class CreatorService {
         return [...this.ingredients];
     }
 
+    getRecipeIngredients() {
+        return [...this.recipeIngredients];
+    }
+
     getIngredientUpdateListener() {
         return this.ingredientsUpdated.asObservable();
+    }
+
+    getRecipeIngredientUpdateListener() {
+        return this.recipeIngredientsUpdated.asObservable();
     }
 
     addIngredient(name: string, calorie: number, pictureUrl: string) {
         const ingredient: Ingredient = {name: name, calAmount: calorie, pictureUrl: pictureUrl};
         this.ingredients.push(ingredient);
         this.ingredientsUpdated.next([...this.ingredients]);
+    }
+
+    addRecipeIngredient(newIngredient: Ingredient) {
+        //const ingredient: Ingredient = {name: name, calAmount: calorie, pictureUrl: pictureUrl};
+        this.recipeIngredients.push(newIngredient);
+        this.recipeIngredientsUpdated.next([...this.recipeIngredients]);
+        console.log(this.recipeIngredients); 
     }
 
     getIngredient(index: number) {

@@ -1,10 +1,14 @@
 @import "../../../../assets/variables.scss";
 
 .container {
-    border: 1px solid $container-border;
+    //border: 1px solid $container-border;
     //border-radius: 10px;
     background-color: $container-background;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+    mat-form-field {
+        width: 100%;
+    }
 
 
     hr {

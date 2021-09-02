@@ -2,13 +2,17 @@
     <div class="row justify-content-center">
         <div class="col-12">
             <form [formGroup]="ingredientForm" (ngSubmit)="onSubmit()">
-                    <div class="form-group">
-                        <label for="name">Alapanyag neve:</label>
+                    
+                    <mat-form-field appearance="outline">
+                        <mat-label>Alapanyag neve:</mat-label>
                         <input 
-                            type="text"  
-                            class="form-control"
-                            formControlName="name">
-                    </div>
+                            type="text" 
+                            formControlName="name"
+                            required
+                            matInput>
+                        <mat-error>Nem adtál meg nevet!</mat-error>
+                    </mat-form-field>
+
                     <!-- <div class="text-center">
                         <label class="d-block">Mennyiség típusa:</label>
                         <hr>
@@ -23,34 +27,36 @@
                         </div>
                         <hr>
                     </div> -->
-                    <div class="form-group">
-                        <label for="calAmount">Kalória mennyiség:</label>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>Kalória mennyiség:</mat-label>
                         <input 
                             type="number"  
-                            class="form-control"
-                            aria-describedby="calorieHelpBlock"
-                            formControlName="calAmount">
-                        <small id="calorieHelpBlock" class="form-text helper">
-                            100 g/ml
-                        </small>
-                    </div>
-                    <div class="form-group">
-                        <label for="pictureUrl">Kép:</label>
+                            formControlName="calAmount"
+                            required
+                            matInput>
+                        <mat-error>Nem adtál meg mennyiséget!</mat-error>
+                        <mat-hint>100 g/ml</mat-hint>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>Kép:</mat-label>
                         <input 
                             type="text" 
-                            class="form-control"
-                            aria-describedby="pictureHelpBlock"
-                            formControlName="pictureUrl">
-                        <small id="pictureHelpBlock" class="form-text">
-                            (Opcionális)
-                        </small>
-                    </div>
+                            formControlName="pictureUrl"
+                            matInput>
+                        <mat-hint>(Opcionális)</mat-hint>
+                    </mat-form-field>
+
                 <button 
-                    class="btn btn-success" 
+                    mat-raised-button 
+                    color="primary" 
                     type="submit"
                     [disabled]="!ingredientForm.valid">Mentés</button>
                 <button 
-                    class="btn btn-danger ml-2" 
+                    mat-raised-button 
+                    color="warn"
+                    class="ml-2 mt-1" 
                     type="button"
                     (click)="onDelete()">Törlés</button>
             </form>
