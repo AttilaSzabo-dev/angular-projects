@@ -1,33 +1,61 @@
 <div class="container py-3">
     <div class="row justify-content-center">
         <div class="col-12">
-            <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
+            <form (submit)="onAddRecipe(postForm)" #postForm="ngForm">
+
                 <mat-form-field appearance="outline">
                     <mat-label>Recept neve:</mat-label>
-                    <input type="text"
-                    formControlName="name" 
-                    required
-                    matInput>
+                    <input 
+                        type="text"
+                        ngModel
+                        name="name" 
+                        required
+                        matInput>
                     <mat-error>Nem adtál meg nevet!</mat-error>
                 </mat-form-field>
 
-                <mat-form-field appearance="outline">
+                <mat-form-field appearance="outline" class="mb-2">
                     <mat-label>Kép:</mat-label>
-                    <input type="text"
-                    formControlName="pictureUrl"
-                    matInput>
+                    <input 
+                        type="text"
+                        ngModel
+                        name="pictureUrl"
+                        matInput>
                     <mat-hint>(Opcionális)</mat-hint>
                 </mat-form-field>
 
-                <mat-form-field appearance="outline" *ngFor="let ingredient of recipeIngredients; let i = index">
-                    <mat-label>{{ ingredient.calAmount }}</mat-label>
-                    <input type="text"
-                    formControlName="pictureUrl"
-                    matInput>
-                </mat-form-field>
-
-                <!-- TODO: átalakítani a formot template driven-re és string interpolationnal vagy bindingal adni az adatokat -->
+                <!-- reactive form ciklussal, hogy a szinkronban legyen a typescript résszel -->
+                <mat-accordion multi="true">
+                    <mat-expansion-panel *ngFor="let ingredient of recipeIngredients; let i = index">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                {{ ingredient.name }}
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <mat-action-row>
+                            <mat-form-field appearance="outline" >
+                                <p></p>
+                                <mat-label>Add meg a mennyiséget</mat-label>
+                                <input 
+                                    type="text"
+                                    ngModel
+                                    name="{{ ingredient.name }}"
+                                    required
+                                    matInput>
+                                <mat-error>Nem adtál meg mennyiséget!</mat-error>
+                            </mat-form-field>
+                        </mat-action-row>
+                    </mat-expansion-panel>
+                </mat-accordion>
                 
+                
+                <button 
+                    mat-raised-button 
+                    color="primary"
+                    class="mt-3" 
+                    type="submit"
+                    [disabled]="!postForm.valid">Mentés</button>
+
             <!-- <button 
                 class="btn btn-success" 
                 type="submit"
