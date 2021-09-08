@@ -37,8 +37,7 @@ export class CreatorService {
     addRecipeIngredient(newIngredient: Ingredient) {
         //const ingredient: Ingredient = {name: name, calAmount: calorie, pictureUrl: pictureUrl};
         this.recipeIngredients.push(newIngredient);
-        this.recipeIngredientsUpdated.next([...this.recipeIngredients]);
-        console.log(this.recipeIngredients); 
+        this.recipeIngredientsUpdated.next([...this.recipeIngredients]); 
     }
 
     getIngredient(index: number) {

@@ -9,4 +9,30 @@
     mat-form-field {
         width: 100%;
     }
+
+    mat-accordion {
+        .flex-row {
+            width: 100%;
+
+            .imgContainer {
+                img {
+                    width: 82%;
+                    object-fit: cover;
+                }
+            }
+
+            .name {
+                font-size: .6rem;
+                font-weight: bold;
+            }
+
+            .val {
+                font-size: .8rem;
+            }
+        }
+
+        .mat-action-row {
+            padding: 0px 10px 0px 10px;
+        }
+    }
 }

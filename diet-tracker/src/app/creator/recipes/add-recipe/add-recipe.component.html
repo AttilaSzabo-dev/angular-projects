@@ -1,14 +1,13 @@
 <div class="container py-3">
     <div class="row justify-content-center">
         <div class="col-12">
-            <form (submit)="onAddRecipe(postForm)" #postForm="ngForm">
+            <form [formGroup]="recipeIngredientsForm" (ngSubmit)="onSubmit()">
 
                 <mat-form-field appearance="outline">
                     <mat-label>Recept neve:</mat-label>
                     <input 
                         type="text"
-                        ngModel
-                        name="name" 
+                        formControlName="name"
                         required
                         matInput>
                     <mat-error>Nem adtál meg nevet!</mat-error>
@@ -18,28 +17,37 @@
                     <mat-label>Kép:</mat-label>
                     <input 
                         type="text"
-                        ngModel
-                        name="pictureUrl"
+                        formControlName="pictureUrl"
                         matInput>
                     <mat-hint>(Opcionális)</mat-hint>
                 </mat-form-field>
 
                 <!-- reactive form ciklussal, hogy a szinkronban legyen a typescript résszel -->
-                <mat-accordion multi="true">
+                <mat-accordion formArrayName="ingredients" multi="false">
                     <mat-expansion-panel *ngFor="let ingredient of recipeIngredients; let i = index">
                         <mat-expansion-panel-header>
                             <mat-panel-title>
-                                {{ ingredient.name }}
+                                <div class="d-flex flex-row">
+                                    <div class="col-4 imgContainer">
+                                        <img src="{{ ingredient.pictureUrl }}" alt="">
+                                    </div>
+                                    <div class="col-4 d-flex flex-column text-center">
+                                        <div class="name">Név:</div>
+                                        <div class="val">{{ ingredient.name }}</div>
+                                    </div>
+                                    <div class="col-4 d-flex flex-column text-center">
+                                        <div class="name">Kalória mennyiség:</div>
+                                        <div class="val">{{ ingredient.calAmount }} kCal</div>
+                                    </div>
+                                </div>
                             </mat-panel-title>
                         </mat-expansion-panel-header>
                         <mat-action-row>
                             <mat-form-field appearance="outline" >
-                                <p></p>
                                 <mat-label>Add meg a mennyiséget</mat-label>
                                 <input 
                                     type="text"
-                                    ngModel
-                                    name="{{ ingredient.name }}"
+                                    [formControlName]="i"
                                     required
                                     matInput>
                                 <mat-error>Nem adtál meg mennyiséget!</mat-error>
@@ -54,7 +62,7 @@
                     color="primary"
                     class="mt-3" 
                     type="submit"
-                    [disabled]="!postForm.valid">Mentés</button>
+                    [disabled]="!recipeIngredientsForm.valid">Mentés</button>
 
             <!-- <button 
                 class="btn btn-success" 
