@@ -14,6 +14,10 @@ export class AddRecipeComponent implements OnInit, OnDestroy {
   recipeIngredientsForm: FormGroup;
   recipeIngredients: Ingredient[] = [];
   private recipeIngredientsSub: Subscription;
+  calArray = [];
+  incomingCalValue = 0;
+  finalCal = 0;
+  finalWeight = 0;
 
   constructor(private creatorService: CreatorService) { }
 
@@ -24,9 +28,12 @@ export class AddRecipeComponent implements OnInit, OnDestroy {
       .subscribe((ingredients: Ingredient[]) => {
         this.recipeIngredients = ingredients;
         const control = new FormControl(null, Validators.required);
-        console.log(ingredients);
         (<FormArray>this.recipeIngredientsForm.get("ingredients")).push(control);
       });
+    this.recipeIngredientsForm.get("ingredients").valueChanges.subscribe(val => {
+      //console.log(val);
+      this.incomingCalValue = +val;
+    });
   }
 
   private initForm() {
@@ -37,18 +44,31 @@ export class AddRecipeComponent implements OnInit, OnDestroy {
     });
   }
 
-  /* onAddRecipe(form: NgForm) {
-    if (form.invalid) {
-      return;
+  inputChanged(event: any) {
+    console.log(event.target.value);
+    const inputId = +event.target.getAttribute('ng-reflect-name');
+    const inputWeightValue = +event.target.value;
+    //const ingredientCalValue = this.recipeIngredients[inputId].calAmount;
+    //console.log("calAmount: ", this.recipeIngredients[inputId].calAmount);
+    //const calculation = (ingredientCalValue / 100) * inputWeightValue;
+    //this.finalCal = (ingredientCalValue / 100) * inputWeightValue;
+    
+    if(inputId < this.calArray.length) {
+      this.calArray[inputId] = inputWeightValue;
+    } else {
+      this.calArray.push(inputWeightValue);
     }
+    
+    let tempCal = 0;
+    let tempWeight = 0;
+    this.calArray.forEach((elem, index)=> {
+      tempCal += (this.recipeIngredients[index].calAmount / 100) * elem;
+      tempWeight += elem;
+    })
 
-    // reactive form ciklussal, hogy a szinkronban legyen a html résszel
-
-    const name = form.value.name;
-    const pictureUrl = form.value.pictureUrl;
-
-    form.resetForm();
-  } */
+    this.finalCal = tempCal;
+    this.finalWeight = tempWeight;
+  }
 
   onSubmit() {
     console.log(this.recipeIngredientsForm)

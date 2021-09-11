@@ -22,7 +22,17 @@
                     <mat-hint>(Opcionális)</mat-hint>
                 </mat-form-field>
 
-                <!-- reactive form ciklussal, hogy a szinkronban legyen a typescript résszel -->
+                <div class="d-flex flex-row justify-content-around result mb-3 mt-2">
+                    <div class="col-4 d-flex flex-column text-center">
+                        <div class="name">Összes kCal:</div>
+                        <div class="val">{{ finalCal }}</div>
+                    </div>
+                    <div class="col-4 d-flex flex-column text-center">
+                        <div class="name">Összes súly:</div>
+                        <div class="val">{{ finalWeight }}</div>
+                    </div>
+                </div>
+
                 <mat-accordion formArrayName="ingredients" multi="false">
                     <mat-expansion-panel *ngFor="let ingredient of recipeIngredients; let i = index">
                         <mat-expansion-panel-header>
@@ -46,8 +56,9 @@
                             <mat-form-field appearance="outline" >
                                 <mat-label>Add meg a mennyiséget</mat-label>
                                 <input 
-                                    type="text"
-                                    [formControlName]="i"
+                                    type="number"
+                                    [formControlName]="i" 
+                                    (input)="inputChanged($event)"
                                     required
                                     matInput>
                                 <mat-error>Nem adtál meg mennyiséget!</mat-error>
