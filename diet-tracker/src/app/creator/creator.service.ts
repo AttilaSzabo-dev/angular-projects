@@ -2,46 +2,36 @@ import { Injectable } from "@angular/core";
 import { Subject } from "rxjs";
 
 import { Ingredient } from "./ingredients/ingredient-list/ingredient/ingredient.model";
+import { Recipe } from "./recipes/recipe-list/recipe/recipe.model";
+import { RecipeIngredient } from "./recipes/recipe-list/recipe/recipeIngredient.model";
 
 @Injectable({providedIn: "root"})
 export class CreatorService {
     private ingredients: Ingredient[] = [];
-    private recipeIngredients: Ingredient[] = [];
     private ingredientsUpdated = new Subject<Ingredient[]>();
+    private recipeIngredients: Ingredient[] = [];
     private recipeIngredientsUpdated = new Subject<Ingredient[]>();
+    private recipes: Recipe[] = [];
+    private recipesUpdated = new Subject<Recipe[]>();
+    
 
     constructor() {};
 
+    // ingredients
     getIngredients() {
         return [...this.ingredients];
-    }
-
-    getRecipeIngredients() {
-        return [...this.recipeIngredients];
     }
 
     getIngredientUpdateListener() {
         return this.ingredientsUpdated.asObservable();
     }
 
-    getRecipeIngredientUpdateListener() {
-        return this.recipeIngredientsUpdated.asObservable();
-    }
-
     addIngredient(name: string, calorie: number, pictureUrl: string) {
         const ingredient: Ingredient = {name: name, calAmount: calorie, pictureUrl: pictureUrl};
         this.ingredients.push(ingredient);
+        //const ingredientIndex = this.ingredients.length - 1;// adatbázisnál újra kell ezt gondolni
+        //this.ingredients[ingredientIndex].id = ingredientIndex;// adatbázisnál újra kell ezt gondolni
         this.ingredientsUpdated.next([...this.ingredients]);
-    }
-
-    addRecipeIngredient(newIngredient: Ingredient) {
-        //const ingredient: Ingredient = {name: name, calAmount: calorie, pictureUrl: pictureUrl};
-        this.recipeIngredients.push(newIngredient);
-        this.recipeIngredientsUpdated.next([...this.recipeIngredients]); 
-    }
-
-    getIngredient(index: number) {
-        return this.ingredients[index];
     }
 
     updateIngredient(index: number, newIngredient: Ingredient) {
@@ -52,5 +42,45 @@ export class CreatorService {
     deleteIngredient(index: number) {
         this.ingredients.splice(index, 1);
         this.ingredientsUpdated.next(this.ingredients.slice());
+    }
+
+    // recipeIngredients
+    getRecipeIngredients() {
+        return [...this.recipeIngredients];
+    }
+
+    getRecipeIngredientUpdateListener() {
+        return this.recipeIngredientsUpdated.asObservable();
+    }
+
+    addRecipeIngredient(newIngredient: Ingredient, index: number) {
+        newIngredient.id = index;
+        this.recipeIngredients.push(newIngredient);
+        this.recipeIngredientsUpdated.next([...this.recipeIngredients]);
+    }
+
+    deleteRecipeIngredient(index: number) {
+        this.recipeIngredients.splice(index, 1);
+        this.recipeIngredientsUpdated.next(this.recipeIngredients.slice());
+    }
+
+    // recipes
+    getRecipes() {
+        return [...this.recipes];
+    }
+
+    getRecipesUpdateListener() {
+        return this.recipesUpdated.asObservable();
+    }
+
+    addRecipe(name: string, pictureUrl: string, allCal: number, allWeight: number, ingredients: RecipeIngredient[]) {
+        const recipe: Recipe = {recipeName: name, recipePictureUrl: pictureUrl, allCal: allCal, allWeight: allWeight, ingredients: ingredients};
+        this.recipes.push(recipe);
+        this.recipesUpdated.next([...this.recipes]);
+    }
+
+    // common
+    getIngredient(index: number) {
+        return this.ingredients[index];
     }
 }

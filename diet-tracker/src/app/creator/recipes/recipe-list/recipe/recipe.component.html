@@ -1,0 +1,33 @@
+<div class="col-12 px-1 mb-3 ingredientElem">
+    <div class="d-flex flex-row justify-content-around text-center wrapper py-1">
+        <div class="picture">
+            <img src="{{ recipe.recipePictureUrl }}" alt="" *ngIf="recipe.recipePictureUrl; else noPic">
+            <ng-template #noPic>
+                <img src="https://st4.depositphotos.com/14953852/24787/v/600/depositphotos_247872612-stock-illustration-no-image-available-icon-vector.jpg" alt="">
+            </ng-template>
+        </div>
+        <div class="name">
+            <p>{{ recipe.recipeName }}</p>
+        </div>
+        <div class="calAmount">
+            <p>Kalória:</p>
+            <!-- <p>{{ ingredient.calAmount }} kCal</p> -->
+        </div>
+        <div class="icons">
+            <!-- <button 
+                type="button" 
+                class="d-flex justify-content-center mx-auto mb-1 edit"
+                (click)="onEditIngredient()"
+                mat-raised-button 
+                color="accent">
+                    <mat-icon aria-hidden="false" aria-label="icon">settings</mat-icon></button>
+            <button 
+                type="button" 
+                class="d-flex justify-content-center mx-auto delete"
+                (click)="onAddIngredientToRecipe()"
+                mat-raised-button 
+                color="primary">
+                    <mat-icon aria-hidden="false" aria-label="icon">check_circle</mat-icon></button> -->
+        </div>
+    </div>
+</div>

@@ -22,6 +22,6 @@ export class IngredientComponent {
 
   onAddIngredientToRecipe() {
     const ingredient = this.creatorService.getIngredient(this.index);
-    this.creatorService.addRecipeIngredient(ingredient);
+    this.creatorService.addRecipeIngredient(ingredient, this.index);
   }
 }

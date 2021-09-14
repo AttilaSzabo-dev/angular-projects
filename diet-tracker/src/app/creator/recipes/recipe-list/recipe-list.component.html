@@ -1,1 +1,8 @@
-<p>recipe-list works!</p>
+<div class="container py-3 px-2">
+    <div class="row no-gutters justify-content-around">
+        <app-recipe 
+            *ngFor="let recipe of recipes; let i = index"
+            [recipe]="recipe" 
+            [index]="i"></app-recipe>
+    </div>
+</div>

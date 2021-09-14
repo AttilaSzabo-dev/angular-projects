@@ -28,7 +28,4 @@ export class AddIngredientComponent {
     form.resetForm();
     this.router.navigate([""], {relativeTo: this.route});
   }
-
-  
-
 }

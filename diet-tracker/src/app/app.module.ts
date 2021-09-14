@@ -8,6 +8,7 @@ import { HeaderComponent } from './header/header.component';
 import { CreatorComponent } from './creator/creator.component';
 import { AddRecipeComponent } from './creator/recipes/add-recipe/add-recipe.component';
 import { RecipeListComponent } from './creator/recipes/recipe-list/recipe-list.component';
+import { RecipeComponent } from './creator/recipes/recipe-list/recipe/recipe.component';
 import { AddIngredientComponent } from './creator/ingredients/add-ingredient/add-ingredient.component';
 import { IngredientListComponent } from './creator/ingredients/ingredient-list/ingredient-list.component';
 import { EditIngredientComponent } from './creator/ingredients/edit-ingredient/edit-ingredient.component';
@@ -28,7 +29,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
     IngredientListComponent,
     EditIngredientComponent,
     IngredientComponent,
-    RecipeListComponent
+    RecipeListComponent,
+    RecipeComponent
   ],
   imports: [
     BrowserModule,

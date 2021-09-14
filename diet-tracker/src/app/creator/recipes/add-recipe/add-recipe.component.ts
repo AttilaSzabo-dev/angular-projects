@@ -15,7 +15,7 @@ export class AddRecipeComponent implements OnInit, OnDestroy {
   recipeIngredients: Ingredient[] = [];
   private recipeIngredientsSub: Subscription;
   calArray = [];
-  incomingCalValue = 0;
+  //incomingCalValue = 0;
   finalCal = 0;
   finalWeight = 0;
 
@@ -30,10 +30,10 @@ export class AddRecipeComponent implements OnInit, OnDestroy {
         const control = new FormControl(null, Validators.required);
         (<FormArray>this.recipeIngredientsForm.get("ingredients")).push(control);
       });
-    this.recipeIngredientsForm.get("ingredients").valueChanges.subscribe(val => {
-      //console.log(val);
+    /* this.recipeIngredientsForm.get("ingredients").valueChanges.subscribe(val => {
+      console.log(val);
       this.incomingCalValue = +val;
-    });
+    }); */
   }
 
   private initForm() {
@@ -45,13 +45,8 @@ export class AddRecipeComponent implements OnInit, OnDestroy {
   }
 
   inputChanged(event: any) {
-    console.log(event.target.value);
     const inputId = +event.target.getAttribute('ng-reflect-name');
     const inputWeightValue = +event.target.value;
-    //const ingredientCalValue = this.recipeIngredients[inputId].calAmount;
-    //console.log("calAmount: ", this.recipeIngredients[inputId].calAmount);
-    //const calculation = (ingredientCalValue / 100) * inputWeightValue;
-    //this.finalCal = (ingredientCalValue / 100) * inputWeightValue;
     
     if(inputId < this.calArray.length) {
       this.calArray[inputId] = inputWeightValue;
@@ -70,8 +65,26 @@ export class AddRecipeComponent implements OnInit, OnDestroy {
     this.finalWeight = tempWeight;
   }
 
+  onDeleteRecipeIngredient(id: number) {
+    this.creatorService.deleteRecipeIngredient(id);
+
+    //TODO: törlés után az összesített értékek nem változnak, resetelni kell
+  }
+
   onSubmit() {
-    console.log(this.recipeIngredientsForm)
+    const recipeName = this.recipeIngredientsForm.value.name;
+    const pictureUrl = this.recipeIngredientsForm.value.pictureUrl;
+    const ingredientsAmount = this.recipeIngredientsForm.value.ingredients;
+    const ingredientsId = this.creatorService.getRecipeIngredients();
+    const ingredients = [];
+
+    ingredientsAmount.forEach((elem, index) => {
+      const temp = {id: ingredientsId[index].id, amount: elem};
+      ingredients.push(temp)
+    });
+    
+    console.log(ingredients);
+    this.creatorService.addRecipe(recipeName, pictureUrl, this.finalCal, this.finalWeight, ingredients);
   }
 
   ngOnDestroy() {

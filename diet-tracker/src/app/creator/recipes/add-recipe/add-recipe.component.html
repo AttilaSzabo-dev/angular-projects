@@ -25,11 +25,11 @@
                 <div class="d-flex flex-row justify-content-around result mb-3 mt-2">
                     <div class="col-4 d-flex flex-column text-center">
                         <div class="name">Összes kCal:</div>
-                        <div class="val">{{ finalCal }}</div>
+                        <div class="val">{{ finalCal }} kCal</div>
                     </div>
                     <div class="col-4 d-flex flex-column text-center">
-                        <div class="name">Összes súly:</div>
-                        <div class="val">{{ finalWeight }}</div>
+                        <div class="name">Mennyiség:</div>
+                        <div class="val">{{ finalWeight }} g</div>
                     </div>
                 </div>
 
@@ -38,7 +38,7 @@
                         <mat-expansion-panel-header>
                             <mat-panel-title>
                                 <div class="d-flex flex-row">
-                                    <div class="col-4 imgContainer">
+                                    <div class="col-2 p-0 imgContainer">
                                         <img src="{{ ingredient.pictureUrl }}" alt="">
                                     </div>
                                     <div class="col-4 d-flex flex-column text-center">
@@ -48,6 +48,15 @@
                                     <div class="col-4 d-flex flex-column text-center">
                                         <div class="name">Kalória mennyiség:</div>
                                         <div class="val">{{ ingredient.calAmount }} kCal</div>
+                                    </div>
+                                    <div class="col-2 text-center deleteWrapper">
+                                        <button 
+                                            type="button" 
+                                            class="d-flex justify-content-center mx-auto mb-1 delete"
+                                            (click)="onDeleteRecipeIngredient(i)"
+                                            mat-raised-button 
+                                            color="warn">
+                                                <mat-icon aria-hidden="false" aria-label="icon">delete</mat-icon></button>
                                     </div>
                                 </div>
                             </mat-panel-title>
