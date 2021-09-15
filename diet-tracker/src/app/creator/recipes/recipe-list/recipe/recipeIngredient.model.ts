@@ -1,4 +1,5 @@
 export interface RecipeIngredient {
-    id: number;
+    name: string;
+    picurl: string;
     amount: number;
 }

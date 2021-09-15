@@ -79,7 +79,7 @@ export class AddRecipeComponent implements OnInit, OnDestroy {
     const ingredients = [];
 
     ingredientsAmount.forEach((elem, index) => {
-      const temp = {id: ingredientsId[index].id, amount: elem};
+      const temp = {name: ingredientsId[index].name, picurl: ingredientsId[index].pictureUrl, amount: elem};
       ingredients.push(temp)
     });
     
