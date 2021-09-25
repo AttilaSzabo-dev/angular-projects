@@ -83,8 +83,9 @@ export class AddRecipeComponent implements OnInit, OnDestroy {
       ingredients.push(temp)
     });
     
-    console.log(ingredients);
     this.creatorService.addRecipe(recipeName, pictureUrl, this.finalCal, this.finalWeight, ingredients);
+
+    //TODO: mentés után resetelni a formot és kitörölni a hozzáadott alapanyagokat
   }
 
   ngOnDestroy() {

@@ -79,6 +79,11 @@ export class CreatorService {
         this.recipesUpdated.next([...this.recipes]);
     }
 
+    deleteRecipe(index: number) {
+        this.recipes.splice(index, 1);
+        this.recipesUpdated.next(this.recipes.slice());
+    }
+
     // common
     getIngredient(index: number) {
         return this.ingredients[index];

@@ -22,7 +22,7 @@ export class RecipeComponent implements OnInit {
   }
 
   onDeleteRecipe() {
-    
+    this.creatorService.deleteRecipe(this.index);
   }
 
 }
