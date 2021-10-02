@@ -20,6 +20,10 @@ export class IngredientComponent {
     this.router.navigate([this.index, "edit"], {relativeTo: this.route});
   }
 
+  onDeleteIngredient(id: string) {
+    this.creatorService.deleteIngredient(id);
+  }
+
   onAddIngredientToRecipe() {
     const ingredient = this.creatorService.getIngredient(this.index);
     this.creatorService.addRecipeIngredient(ingredient, this.index);

@@ -14,20 +14,34 @@
             <p>{{ ingredient.calAmount }} kCal</p>
         </div>
         <div class="icons">
-            <button 
-                type="button" 
-                class="d-flex justify-content-center mx-auto mb-1 edit"
-                (click)="onEditIngredient()"
-                mat-raised-button 
-                color="accent">
-                    <mat-icon aria-hidden="false" aria-label="icon">settings</mat-icon></button>
-            <button 
-                type="button" 
-                class="d-flex justify-content-center mx-auto add"
-                (click)="onAddIngredientToRecipe()"
-                mat-raised-button 
-                color="primary">
-                    <mat-icon aria-hidden="false" aria-label="icon">check_circle</mat-icon></button>
+            <div class="d-flex flex-row">
+                <div class="col-6 p-0">
+                    <button 
+                        type="button" 
+                        class="d-flex justify-content-center mx-auto mb-1 edit"
+                        (click)="onEditIngredient()"
+                        mat-raised-button 
+                        color="accent">
+                            <mat-icon aria-hidden="false" aria-label="icon">settings</mat-icon></button>
+                    <button 
+                        type="button" 
+                        class="d-flex justify-content-center mx-auto delete"
+                        (click)="onDeleteIngredient(ingredient.id)"
+                        mat-raised-button 
+                        color="warn">
+                            <mat-icon aria-hidden="false" aria-label="icon">delete</mat-icon></button>
+                    
+                </div>
+                <div class="col-6 p-0">
+                    <button 
+                        type="button" 
+                        class="d-flex justify-content-center mx-auto add"
+                        (click)="onAddIngredientToRecipe()"
+                        mat-raised-button 
+                        color="primary">
+                            <mat-icon aria-hidden="false" aria-label="icon">check_circle</mat-icon></button>
+                </div>
+            </div>
         </div>
     </div>
 </div>

@@ -39,8 +39,7 @@ export class EditIngredientComponent implements OnInit {
     this.router.navigate([""], {relativeTo: this.route});
   }
 
-  onDelete() {
-    this.creatorService.deleteIngredient(this.id);
+  onCancel() {
     this.router.navigate([""], {relativeTo: this.route});
   }
 }

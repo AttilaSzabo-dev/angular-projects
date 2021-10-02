@@ -45,7 +45,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            width: 30%;
+            width: 27%;
             
             p {
                 font-size: .8rem;
@@ -56,7 +56,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            width: 28%;
+            width: 25%;
             
             p {
                 font-size: .75rem;
@@ -69,26 +69,41 @@
         }
 
         .icons {
-            width: 15%;
+            height: 55px;
+            width: 26%;
 
             .mat-raised-button {
                 min-width: unset;
                 width: 70%;
-                height: 47%;
+                height: 36%;
                 line-height: unset;
-                padding-top: 1px;
+                
 
                 &.edit {
+                    padding-top: 2px;
+
                     .material-icons {
-                        font-size: 19px;
+                        font-size: 16px;
+                    }
+                }
+                
+                &.delete {
+                    padding-top: 2px;
+
+                    .material-icons {
+                        font-size: 16px;
                     }
                 }
 
                 &.add {
+                    display: flex;
+                    align-items: center;
+                    height: 78%;
+
                     .material-icons {
-                        font-size: 17px;
+                        font-size: 23px;
                     }
-                }  
+                }
             }
         }
     }

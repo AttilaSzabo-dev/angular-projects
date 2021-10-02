@@ -16,8 +16,16 @@ export class IngredientListComponent implements OnInit, OnDestroy {
 
   constructor(public creatorService: CreatorService) {}
 
-  ngOnInit() {
+  /* ngOnInit() {
     this.ingredients = this.creatorService.getIngredients();
+    this.ingredientsSub = this.creatorService.getIngredientUpdateListener() 
+      .subscribe((ingredients: Ingredient[]) => {
+        this.ingredients = ingredients;
+      });
+  } */
+
+  ngOnInit() {
+    this.creatorService.getIngredients();
     this.ingredientsSub = this.creatorService.getIngredientUpdateListener() 
       .subscribe((ingredients: Ingredient[]) => {
         this.ingredients = ingredients;
