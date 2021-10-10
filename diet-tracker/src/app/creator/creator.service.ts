@@ -108,23 +108,67 @@ export class CreatorService {
     }
 
     // recipes
-    getRecipes() {
+    /* getRecipes() {
         return [...this.recipes];
+    } */
+
+    getRecipes() {
+        this.http
+            .get<{message: string, recipes: any}>(
+                "http://localhost:3000/api/recipes"
+            )
+            .pipe(map((recipeData) => {
+                return recipeData.recipes.map( recipe => {
+                    return {
+                        recipeName: recipe.recipeName,
+                        recipePictureUrl: recipe.recipePictureUrl,
+                        allCal: recipe.allCal,
+                        allWeight: recipe.allWeight,
+                        ingredients: recipe.ingredients,
+                        id: recipe._id
+                    };
+                });
+            }))
+            .subscribe(transformedRecipes => {
+                this.recipes = transformedRecipes;
+                this.recipesUpdated.next([...this.recipes]);
+            });
     }
 
     getRecipesUpdateListener() {
         return this.recipesUpdated.asObservable();
     }
 
-    addRecipe(name: string, pictureUrl: string, allCal: number, allWeight: number, ingredients: RecipeIngredient[]) {
+    /* addRecipe(name: string, pictureUrl: string, allCal: number, allWeight: number, ingredients: RecipeIngredient[]) {
         const recipe: Recipe = {recipeName: name, recipePictureUrl: pictureUrl, allCal: allCal, allWeight: allWeight, ingredients: ingredients};
         this.recipes.push(recipe);
         this.recipesUpdated.next([...this.recipes]);
+    } */
+
+    addRecipe(recipeName: string, recipePictureUrl: string, allCal: number, allWeight: number, ingredients: RecipeIngredient[]) {
+        const recipe: Recipe = {recipeName: recipeName, recipePictureUrl: recipePictureUrl, allCal: allCal, allWeight: allWeight, ingredients: ingredients, id: null};
+        this.http
+             .post<{message: string, recipeId: string}>("http://localhost:3000/api/recipes", recipe)
+             .subscribe((responseData)=> {
+                 const id = responseData.recipeId;
+                 recipe.id = id;
+                 this.recipes.push(recipe);
+                 this.recipesUpdated.next([...this.recipes]);
+             });
     }
 
-    deleteRecipe(index: number) {
+    /* deleteRecipe(index: number) {
         this.recipes.splice(index, 1);
         this.recipesUpdated.next(this.recipes.slice());
+    } */
+
+    deleteRecipe(recipeId: string) {
+        this.http.delete("http://localhost:3000/api/recipes/" + recipeId)
+            .subscribe(() => {
+                const updatedRecipes = this.recipes.filter(recipe => recipe.id !== recipeId);
+                this.recipes = updatedRecipes;
+                this.recipesUpdated.next([...this.recipes]);
+            });
     }
 
     // common

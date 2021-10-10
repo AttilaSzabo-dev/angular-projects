@@ -6,5 +6,5 @@ export interface Recipe {
     allCal: number;
     allWeight: number;
     ingredients: RecipeIngredient[];
-    id?: number;
+    id?: any;
 }

@@ -21,8 +21,8 @@ export class RecipeComponent implements OnInit {
 
   }
 
-  onDeleteRecipe() {
-    this.creatorService.deleteRecipe(this.index);
+  onDeleteRecipe(id: string) {
+    this.creatorService.deleteRecipe(id);
   }
 
 }

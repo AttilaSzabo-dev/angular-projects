@@ -2,7 +2,8 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 
-const Ingredient = require("./models/ingredient")
+const Ingredient = require("./models/ingredient");
+const Recipe = require("./models/recipe");
 
 const app = express();
 
@@ -57,6 +58,39 @@ app.delete("/api/ingredients/:id", (req,res, next) => {
     Ingredient.deleteOne({_id: req.params.id}).then(result => {
         console.log(result);
         res.status(200).json({message: "Ingredient deleted!"});
+    });
+});
+
+//recipes
+app.post("/api/recipes", (req, res, next) => {
+    const recipe = new Recipe({
+        recipeName: req.body.recipeName,
+        recipePictureUrl: req.body.recipePictureUrl,
+        allCal: req.body.allCal,
+        allWeight: req.body.allWeight,
+        ingredients: req.body.ingredients
+    });
+    recipe.save().then(createdRecipe => {
+        res.status(201).json({
+            message: "Recipe added successfully",
+            recipeId: createdRecipe._id
+        });
+    });
+});
+
+app.get("/api/recipes", (req, res, next) => {
+    Recipe.find().then(documents => {
+        res.status(200).json({
+            message: "Recipe fetched successfully!",
+            recipes: documents
+        });
+    });
+});
+
+app.delete("/api/recipes/:id", (req,res, next) => {
+    Recipe.deleteOne({_id: req.params.id}).then(result => {
+        console.log(result);
+        res.status(200).json({message: "Recipe deleted!"});
     });
 });
 
