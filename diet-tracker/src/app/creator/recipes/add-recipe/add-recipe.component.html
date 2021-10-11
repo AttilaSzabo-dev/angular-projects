@@ -37,7 +37,7 @@
                     <mat-expansion-panel *ngFor="let ingredient of recipeIngredients; let i = index">
                         <mat-expansion-panel-header>
                             <mat-panel-title>
-                                <div class="d-flex flex-row">
+                                <!-- <div class="d-flex flex-row">
                                     <div class="col-2 p-0 imgContainer">
                                         <img src="{{ ingredient.pictureUrl }}" alt="">
                                     </div>
@@ -58,6 +58,21 @@
                                             color="warn">
                                                 <mat-icon aria-hidden="false" aria-label="icon">delete</mat-icon></button>
                                     </div>
+                                </div> -->
+                                <div class="d-flex flex-row ingredientContainer">
+                                    <div class="picture text-center pt-1">
+                                        <img src="{{ ingredient.pictureUrl }}" alt="" *ngIf="ingredient.pictureUrl; else noPic">
+                                        <ng-template #noPic>
+                                            <img src="https://static.thenounproject.com/png/340719-200.png" alt="">
+                                        </ng-template>
+                                    </div>
+                                    <div class="d-flex justify-content-center align-items-center pt-2 name">
+                                        <div class="val">{{ ingredient.name }}</div>
+                                    </div>
+                                    <div class="d-flex flex-column justify-content-center align-items-center cal">
+                                        <div class="info">100g-ban:</div>
+                                        <div class="val">{{ ingredient.calAmount }} kCal</div>
+                                    </div>
                                 </div>
                             </mat-panel-title>
                         </mat-expansion-panel-header>
@@ -72,6 +87,15 @@
                                     matInput>
                                 <mat-error>Nem adtál meg mennyiséget!</mat-error>
                             </mat-form-field>
+                            <div class="text-center deleteWrapper">
+                                <button 
+                                    type="button" 
+                                    class="d-flex justify-content-center mx-auto mb-1 delete"
+                                    (click)="onDeleteRecipeIngredient(i)"
+                                    mat-raised-button 
+                                    color="warn">
+                                        <mat-icon aria-hidden="false" aria-label="icon">delete</mat-icon></button>
+                            </div>
                         </mat-action-row>
                     </mat-expansion-panel>
                 </mat-accordion>

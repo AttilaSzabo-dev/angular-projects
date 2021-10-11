@@ -28,49 +28,62 @@
         }
     }
 
-    mat-accordion {
-        .flex-row {
-            width: 100%;
+    .ingredientContainer {
+        height: 80%;
+        width: 80%;
 
-            .imgContainer {
-                img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: contain;
-                }
-            }
-
-            .deleteWrapper {
-                padding-top: 5px;
-
-                .mat-raised-button {
-                    min-width: unset;
-                    width: 100%;
-                    height: 80%;
-                    line-height: unset;
-                    padding-top: 5px;
-                    z-index: 1000;
+        .picture {
+            width: 30%;
     
-                    &.delete {
-                        .material-icons {
-                            font-size: 19px;
-                        }
-                    }
-                }
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
             }
-
-            .name {
-                font-size: .6rem;
-                font-weight: bold;
-            }
+        }
+    
+        .name {
+            width: 40%;
 
             .val {
                 font-size: .8rem;
+                font-weight: bold;
             }
         }
 
-        .mat-action-row {
-            padding: 0px 10px 0px 10px;
+        .cal {
+            width: 30%;
+
+            .info {
+                font-size: .6rem;
+            }
+
+            .val {
+                font-size: .9rem;
+                font-weight: bold;
+            }
+        }
+    }
+
+    .mat-expansion-panel-header {
+        padding: 0 30px 0 10px;
+
+        .mat-expansion-panel-header-title {
+            height: 40px;
+            margin-right: 0;
+        }
+    }
+
+    .mat-action-row {
+        padding: 16px 8px 0px 24px;
+    }
+
+    .deleteWrapper {
+        padding-top: 12px;
+
+        .mat-raised-button {
+            min-width: unset;
+            width: 80%;
         }
     }
 }

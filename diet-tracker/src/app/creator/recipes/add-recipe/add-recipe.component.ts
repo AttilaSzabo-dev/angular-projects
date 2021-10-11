@@ -54,6 +54,10 @@ export class AddRecipeComponent implements OnInit, OnDestroy {
       this.calArray.push(inputWeightValue);
     }
     
+    this.calculateAmounts();
+  }
+
+  calculateAmounts() {
     let tempCal = 0;
     let tempWeight = 0;
     this.calArray.forEach((elem, index)=> {
@@ -67,8 +71,12 @@ export class AddRecipeComponent implements OnInit, OnDestroy {
 
   onDeleteRecipeIngredient(id: number) {
     this.creatorService.deleteRecipeIngredient(id);
+    this.calArray.splice(id, 1);
+    //(<FormArray>this.recipeIngredientsForm.get("ingredients")).removeAt(id);
 
-    //TODO: törlés után az összesített értékek nem változnak, resetelni kell
+    this.calculateAmounts();
+
+    //TODO: törlés után a form validation nem működik
   }
 
   onSubmit() {
@@ -86,6 +94,9 @@ export class AddRecipeComponent implements OnInit, OnDestroy {
     this.creatorService.addRecipe(recipeName, pictureUrl, this.finalCal, this.finalWeight, ingredients);
 
     //TODO: mentés után resetelni a formot és kitörölni a hozzáadott alapanyagokat
+    this.recipeIngredientsForm.reset();
+    this.finalCal = 0;
+    this.finalWeight = 0;
   }
 
   ngOnDestroy() {
